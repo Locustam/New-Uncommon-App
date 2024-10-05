@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
+  m_Name: Level24
+  m_EditorClassIdentifier: 
+  academicMultiplier: 0.9
+  financeMultiplier: 0.8
+  studentLeft: 30
+  studentRequired: 25
+  initialScholarship: 700
+  goodStudentPercentage: 7
+  badStudentPercentage: 61
+  richStudentPercentage: 7
+  poorStudentPercentage: 79
+  extroversionPercentage: 42
+  magicalPersonalityPercentage: 55
+  workplacePercentage: 45
+  schedulePercentage: 53
+  explorativityPercentage: 43
+  psionicAffinityPercentage: 55
+  verteranPercentage: 46
+  alumniPercentage: 43
+  patronPercentage: 53
+  firstGenPercentage: 48
+  stateSponsoredPercentage: 49
+  miniGoalPool:
+  - goal: introverted
+    requiredNum: 5
+  - goal: extroverted
+    requiredNum: 5
+  - goal: calm
+    requiredNum: 5
+  - goal: emotional
+    requiredNum: 5
+  - goal: night owl
+    requiredNum: 5
+  - goal: early bird
+    requiredNum: 5
+  - goal: careful
+    requiredNum: 5
+  - goal: explorative
+    requiredNum: 5
+  - goal: non-psychic
+    requiredNum: 5
+  - goal: psychic
+    requiredNum: 5
+  - goal: 1st-gen
+    requiredNum: 5
+  - goal: legacy
+    requiredNum: 5
+  - goal: patron
+    requiredNum: 5
+  features:
+  - includedFeature: 1
+  - includedFeature: 0
+  - includedFeature: 2
+  - includedFeature: 3
+  - includedFeature: 4
+  - includedFeature: 5
+  - includedFeature: 6
+  singleMessages: []

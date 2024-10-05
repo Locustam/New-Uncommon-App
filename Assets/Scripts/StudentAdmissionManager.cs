@@ -312,8 +312,11 @@ public class StudentAdmissionManager : MonoBehaviour
                     patronStudent += data._isPatron ? 1 : 0;
 
                     //===Legendary====
-                    LegendaryStudentManager.Instance.UnlockCurrentScanedLegendaryStudent();
-                    StudentGenerationManager.Instance.remainingLegendaryStudentList.Remove(data);
+                    if (studentInfo.isLegendary && LegendaryStudentManager.Instance.lastStudentData != null && data == LegendaryStudentManager.Instance.lastStudentData)
+                    {
+                        LegendaryStudentManager.Instance.UnlockCurrentScanedLegendaryStudent();
+                        StudentGenerationManager.Instance.remainingLegendaryStudentList.Remove(data);
+                    }
                     //================
 
                     //===Mini Goal Datas===
@@ -458,7 +461,7 @@ public class StudentAdmissionManager : MonoBehaviour
     {
         if (totalScholarship >= financeRequired - data._finance)
         {
-
+            
             return true;
         }
         else
@@ -469,6 +472,7 @@ public class StudentAdmissionManager : MonoBehaviour
                     return true;
                 }
             }
+            AnnouncementManager.Instance.DisplayAnnouncement("Not enough scholarship");
             return false;
         }
     }

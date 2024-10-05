@@ -66,6 +66,7 @@ public class LevelData : ScriptableObject
 
     public List<Feature> features = new();
 
+    public List<SingleMessage> singleMessages = new();
 }
 
 [System.Serializable]
@@ -81,6 +82,7 @@ public class MiniGoalOptions
 [System.Serializable]
 public class Feature
 {
-    public enum feature { miniGoals, preferences, booleans, legendaryStudents}
+    public enum feature { miniGoals, preferences, booleans, legendaryStudents,legendaryStudent1,legendaryStudent2,legendaryStudent3}
     public feature includedFeature;
 }
+

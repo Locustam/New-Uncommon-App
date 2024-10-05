@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
+  m_Name: Level10
+  m_EditorClassIdentifier: 
+  academicMultiplier: 0.7
+  financeMultiplier: 0.9
+  studentLeft: 35
+  studentRequired: 25
+  initialScholarship: 700
+  goodStudentPercentage: 9
+  badStudentPercentage: 43
+  richStudentPercentage: 13
+  poorStudentPercentage: 62
+  extroversionPercentage: 62
+  magicalPersonalityPercentage: 24
+  workplacePercentage: 0
+  schedulePercentage: 35
+  explorativityPercentage: 23
+  psionicAffinityPercentage: 66
+  verteranPercentage: 40
+  alumniPercentage: 49
+  patronPercentage: 49
+  firstGenPercentage: 48
+  stateSponsoredPercentage: 40
+  miniGoalPool:
+  - goal: psychic
+    requiredNum: 10
+  - goal: 1st-gen
+    requiredNum: 10
+  features:
+  - includedFeature: 1
+  - includedFeature: 0
+  - includedFeature: 2
+  - includedFeature: 3
+  - includedFeature: 4
+  - includedFeature: 5
+  singleMessages:
+  - message: You worked very well in the past 10 days.
+    sprite: {fileID: 0}
+  - message: I want to challenge you with harder mini goals today.
+    sprite: {fileID: 0}
+  - message: You don't get paid more. But I will be impressed if you completes them.
+    sprite: {fileID: 0}

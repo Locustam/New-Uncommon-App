@@ -35,7 +35,21 @@ public class ChatManager : MonoBehaviour
     void Start()
     {
         Debug.Log("messageDatas[0].ToString()" + messageDatas[GameManager.Instance.currentLevelID].name);
-        SetCurrentChat(messageDatas[GameManager.Instance.currentLevelID].name,0);
+        if (GameManager.Instance.currentLevelManager.levelData.singleMessages.Count > 0)
+        {
+            currentMessageData = new MessageData();
+            foreach (SingleMessage messageData in GameManager.Instance.currentLevelManager.levelData.singleMessages) {
+
+                currentMessageData.messageContentList.Add(messageData);
+            }
+            InstantiateMessage();
+
+        }
+        else
+        {
+            SetCurrentChat(messageDatas[GameManager.Instance.currentLevelID].name, 0);
+        }
+        
         
     }
 

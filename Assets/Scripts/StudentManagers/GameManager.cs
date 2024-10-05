@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("Level ID out of range!");
             }
+            
         }
     }
 
@@ -73,12 +74,16 @@ public class GameManager : MonoBehaviour
         mainScreenAnimator = gameTabs[0].GetComponent<Animator>();
         mainScreenAnimator.SetTrigger("LoadIn");
         Debug.Log("now level data id=" + currentLevelID);
+        if(currentLevelID > 0){
+            AdsManager.Instance.interstitialAds.Invoke("ShowInterstitialAd", 1f);
+        }
     }
 
     private void Update()
     {
         dayText.text = "Day " + (currentLevelID+1).ToString();
         Debug.Log("updating level data id=" + currentLevelID);
+
     }
     public void GameLose()
     {
@@ -117,6 +122,7 @@ public class GameManager : MonoBehaviour
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
     public void SaveCurrentLevelID()

@@ -133,7 +133,23 @@ public class StudentGenerationManager : MonoBehaviour
     {
         //========Legendary Student======
         //Initializing student data list
-        remainingLegendaryStudentList = allLegendaryStudentList;
+        //remainingLegendaryStudentList = allLegendaryStudentList;
+            foreach(Feature feature in GameManager.Instance.currentLevelManager.levelData.features)
+            {
+                
+                if(feature.includedFeature == Feature.feature.legendaryStudent1)
+                {
+                    remainingLegendaryStudentList.Add(allLegendaryStudentList[0]);
+                }
+                if(feature.includedFeature == Feature.feature.legendaryStudent2)
+                {
+                    remainingLegendaryStudentList.Add(allLegendaryStudentList[1]);
+                }
+                if(feature.includedFeature == Feature.feature.legendaryStudent3)
+                {
+                    remainingLegendaryStudentList.Add(allLegendaryStudentList[2]);
+                }
+            }
         for (var i = LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count - 1; i >= 0; i--)
         {
             Debug.Log("Checking for unlocked legendary");
@@ -234,6 +250,7 @@ public class StudentGenerationManager : MonoBehaviour
             {
                 if (remainingLegendaryStudentList.Count > 0)
                 {
+                    
                     StudentData d = remainingLegendaryStudentList[Random.Range(0, remainingLegendaryStudentList.Count)];
                     //remainingLegendaryStudentList.Remove(d);
                     data = d;

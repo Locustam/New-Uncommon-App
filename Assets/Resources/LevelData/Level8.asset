@@ -16,11 +16,11 @@ MonoBehaviour:
   financeMultiplier: 0.7
   studentLeft: 25
   studentRequired: 20
-  initialScholarship: 300
+  initialScholarship: 700
   goodStudentPercentage: 4
-  badStudentPercentage: 31
+  badStudentPercentage: 22
   richStudentPercentage: 15
-  poorStudentPercentage: 80
+  poorStudentPercentage: 54
   extroversionPercentage: 61
   magicalPersonalityPercentage: 40
   workplacePercentage: 0
@@ -42,3 +42,20 @@ MonoBehaviour:
   - includedFeature: 0
   - includedFeature: 2
   - includedFeature: 3
+  - includedFeature: 4
+  - includedFeature: 5
+  singleMessages:
+  - message: How is your progress with legendary students?
+    sprite: {fileID: 0}
+  - message: Did you find the first one?
+    sprite: {fileID: 0}
+  - message: I have some new information on another one of them.
+    sprite: {fileID: 0}
+  - message: 'See if you can find them. '
+    sprite: {fileID: 0}
+  - message: But just to remind you, you can only hire one of them at a time.
+    sprite: {fileID: 0}
+  - message: Switching your legendary student assistent costs fees too.
+    sprite: {fileID: 0}
+  - message: Now go to your work.
+    sprite: {fileID: 0}

@@ -16,11 +16,11 @@ MonoBehaviour:
   financeMultiplier: 0.9
   studentLeft: 20
   studentRequired: 20
-  initialScholarship: 250
+  initialScholarship: 1500
   goodStudentPercentage: 5
   badStudentPercentage: 50
   richStudentPercentage: 9
-  poorStudentPercentage: 90
+  poorStudentPercentage: 74
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
   workplacePercentage: 0
@@ -42,3 +42,12 @@ MonoBehaviour:
   - includedFeature: 0
   - includedFeature: 2
   - includedFeature: 3
+  - includedFeature: 4
+  - includedFeature: 5
+  singleMessages:
+  - message: Did you realize today you get to manage a lot more scholarships?
+    sprite: {fileID: 0}
+  - message: Don't thank me too early.
+    sprite: {fileID: 0}
+  - message: There is very few students today for you. Use your scholarship wisely.
+    sprite: {fileID: 0}

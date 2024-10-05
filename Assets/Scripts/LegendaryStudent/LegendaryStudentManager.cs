@@ -11,7 +11,7 @@ public class LegendaryStudentManager : MonoBehaviour
     public static LegendaryStudentManager Instance;
     [SerializeField] StudentInfo studentInfo;
     [SerializeField] Animator studentInfoAnimator;
-    StudentData lastStudentData; 
+    public StudentData lastStudentData; 
     [SerializeField] List<Image> bodyParts;
     public List<LegendaryStudentVisuals> legendaryStudentVisualsList = new();
     public bool moreAcademicLessMoneyEffect;

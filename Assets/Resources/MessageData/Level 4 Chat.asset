@@ -16,7 +16,7 @@ MonoBehaviour:
   - message: 'May I have your attention once again? There has been an update to our
       software that I need to alert you of. '
     sprite: {fileID: 0}
-  - message: "It has come to our attention that there are three students in the current
+  - message: "It has come to our attention that there is a student in the current
       season of applicants who have been appointed with the <wave a=0.1 f=1 w=1><b>\u201CLegendary\u201D</b></wave>
       status. "
     sprite: {fileID: 0}

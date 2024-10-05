@@ -71,6 +71,18 @@ public class LevelManager : MonoBehaviour
                     featureObjects[3].SetActive(true);
                         featureObjects[4].SetActive(true);
                 }
+                if(feature.includedFeature == Feature.feature.legendaryStudent1)
+                {
+                    featureObjects[5].SetActive(true);
+                }
+                if(feature.includedFeature == Feature.feature.legendaryStudent2)
+                {
+                    featureObjects[6].SetActive(true);
+                }
+                if(feature.includedFeature == Feature.feature.legendaryStudent3)
+                {
+                    featureObjects[7].SetActive(true);
+                }
             }
         }
 

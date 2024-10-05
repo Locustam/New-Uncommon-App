@@ -17,10 +17,10 @@ MonoBehaviour:
   studentLeft: 40
   studentRequired: 15
   initialScholarship: 500
-  goodStudentPercentage: 6
-  badStudentPercentage: 29
+  goodStudentPercentage: 8
+  badStudentPercentage: 22
   richStudentPercentage: 13
-  poorStudentPercentage: 62
+  poorStudentPercentage: 50
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
   workplacePercentage: 0
@@ -40,3 +40,4 @@ MonoBehaviour:
   features:
   - includedFeature: 1
   - includedFeature: 0
+  singleMessages: []

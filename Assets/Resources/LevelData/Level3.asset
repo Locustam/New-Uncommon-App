@@ -16,11 +16,11 @@ MonoBehaviour:
   financeMultiplier: 0.4
   studentLeft: 35
   studentRequired: 20
-  initialScholarship: 500
+  initialScholarship: 600
   goodStudentPercentage: 17
-  badStudentPercentage: 29
+  badStudentPercentage: 26
   richStudentPercentage: 20
-  poorStudentPercentage: 62
+  poorStudentPercentage: 44
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
   workplacePercentage: 0
@@ -41,3 +41,4 @@ MonoBehaviour:
   - includedFeature: 1
   - includedFeature: 0
   - includedFeature: 2
+  singleMessages: []
