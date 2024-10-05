@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  academicMultiplier: 0.4
+  financeMultiplier: 0.7
+  studentLeft: 35
+  studentRequired: 20
+  initialScholarship: 500
+  goodStudentPercentage: 6
+  badStudentPercentage: 29
+  richStudentPercentage: 22
+  poorStudentPercentage: 62
+  extroversionPercentage: 62
+  magicalPersonalityPercentage: 24
+  workplacePercentage: 0
+  schedulePercentage: 35
+  explorativityPercentage: 23
+  psionicAffinityPercentage: 66
+  verteranPercentage: 40
+  alumniPercentage: 49
+  patronPercentage: 49
+  firstGenPercentage: 48
+  stateSponsoredPercentage: 40
+  miniGoalPool:
+  - goal: careful
+    requiredNum: 5
+  - goal: patron
+    requiredNum: 5
+  features:
+  - includedFeature: 1
+  - includedFeature: 0
+  - includedFeature: 2

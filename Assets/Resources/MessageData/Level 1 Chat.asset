@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99e728c065cf4800b20910a4b138d52, type: 3}
+  m_Name: Level 1 Chat
+  m_EditorClassIdentifier: 
+  messageContentList:
+  - message: I have an additional assignment for you. Pay attention.
+    sprite: {fileID: 0}
+  - message: "Below school statistics, there should now be a tab labeled <bounce
+      a=0.1 f=0.5 w=1>\u201CMini Goals.\u201D </bounce>"
+    sprite: {fileID: 21300000, guid: d19073d55f112b7439e3c03ac5e449ac, type: 3}
+  - message: These additional responsibilities are indicative of what I have observed
+      to be positive trends in university admissions statistics.
+    sprite: {fileID: 0}
+  - message: "In layman\u2019s terms: I am telling you to admit these types of students.
+      It will make us look good. "
+    sprite: {fileID: 0}
+  - message: Student preferences are assigned a value from 1 to 5, indicated by the
+      number of dashes in the allotted field.
+    sprite: {fileID: 21300000, guid: d67c2e22598cde041a9e1735688441a3, type: 3}
+  - message: Student preferences are assigned a value from 1 to 5, indicated by the
+      number of dashes in the allotted field.
+    sprite: {fileID: 21300000, guid: d67c2e22598cde041a9e1735688441a3, type: 3}
+  - message: 'If the indicated preference is bolded, this student will count toward
+      your Mini Goal. '
+    sprite: {fileID: 0}
+  - message: If you succeed in completing your assigned Mini Goals, our good reputation
+      should reward you with additional <wave a=0.1 f=1 w=1><b>scholarship funding</b>
+      </wave>or <wave a=0.1 f=1 w=1><b>applicants</b></wave>. Take advantage of the
+      opportunity to accept a more diverse pool of students.
+    sprite: {fileID: 0}
+  - message: ' That is all for now. Keep up the good work. '
+    sprite: {fileID: 0}

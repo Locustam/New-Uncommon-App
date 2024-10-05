@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1df3000a5c1a4eee888402c6e8494ba, type: 3}
+  m_Name: Tanuki
+  m_EditorClassIdentifier: 
+  ASpriteList:
+  - {fileID: 21300000, guid: 5f0daa0eedd9b87419e6a7f0b212d8ae, type: 3}
+  - {fileID: 21300000, guid: 0d797861bf22c7d458e3f80ce3bdbeea, type: 3}
+  - {fileID: 21300000, guid: 71dfe459a82d6f64db69e377d34e404b, type: 3}
+  BSpriteList:
+  - {fileID: 21300000, guid: daf5a28e9da2eb74aa2f0743c42d937c, type: 3}
+  - {fileID: 21300000, guid: bd99efd8d9b0f2d4ea5b1bf26881f35e, type: 3}
+  - {fileID: 21300000, guid: 76db2f96b81269649869824c108f6502, type: 3}
+  CSpriteList:
+  - {fileID: 21300000, guid: b056c60d0e051aa4e864d7eb5040a208, type: 3}
+  - {fileID: 21300000, guid: 221e753cbb09bf14e92a23317c3a521b, type: 3}
+  - {fileID: 21300000, guid: 99ef97e994ed7554589ff8f52e43e42f, type: 3}
+  DSpriteList:
+  - {fileID: 21300000, guid: 89099c1db28a64941b86a959893ad299, type: 3}
+  - {fileID: 21300000, guid: b15b7632bfd07af458b061a20d333314, type: 3}
+  - {fileID: 21300000, guid: 203c9c7e8a5b7814fa06c0d7a66d00f0, type: 3}
+  ESpriteList:
+  - {fileID: 21300000, guid: 871b34ee78a6b3347a1bec6c6ffc87e0, type: 3}
+  - {fileID: 21300000, guid: f0913827abea84e4fbb077b2421b1cbe, type: 3}
+  - {fileID: 21300000, guid: c6d202316032e50449d6a2fa96b963f3, type: 3}
+  FSpriteList:
+  - {fileID: 21300000, guid: c9989381f963d0f49a0bb8099d2ab667, type: 3}
+  - {fileID: 21300000, guid: a39a1e6d107dad6499057d8ea9b6f8f4, type: 3}
+  - {fileID: 21300000, guid: 4975bbc6831f3e4488025d6d51d34f27, type: 3}
+  GSpriteList:
+  - {fileID: 21300000, guid: 8bbb18f0d1030554ca7f2b1e70e0627f, type: 3}
+  - {fileID: 21300000, guid: d93ec4805ab475040a42848454e09ddb, type: 3}
+  - {fileID: 21300000, guid: 9d6bfbe0624fe47469745bd31778f688, type: 3}
+  HSpriteList: []
+  ISpriteList:
+  - {fileID: 21300000, guid: 17f1ac12f088f4b47977fddd43abc354, type: 3}
+  - {fileID: 21300000, guid: 339251057d292534496ffc0ca0cd2b1e, type: 3}
+  - {fileID: 21300000, guid: 2feeb7f524757aa498594d6b53736801, type: 3}
+  - {fileID: 21300000, guid: f17c3d158615a784e9ec87324f8a619f, type: 3}
+  - {fileID: 21300000, guid: 06e70285ed9208347b5633260b18e775, type: 3}
+  JSpriteList: []
+  KSpriteList: []
+  LSpriteList: []
+  bindedBodyParts: []
+  raceName: Tanuki
+  raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 1
+  SecondNation: 0
