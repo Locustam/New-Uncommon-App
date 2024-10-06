@@ -408,7 +408,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4282263606
-  m_fontColor: {r: 0.21176472, g: 0.15686275, b: 0.24313727, a: 1}
+  m_fontColor: {r: 0.21176471, g: 0.15686275, b: 0.24313726, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1062,7 +1062,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Introverted
+  m_text: 'Introverted
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -1477,7 +1479,6 @@ MonoBehaviour:
   - {fileID: 7884483801752697337}
   - {fileID: 7477743310778360820}
   nums: 00000000000000000000000000000000
-  textFormat: {fileID: 0}
 --- !u!114 &5203575046909611798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cc5fc280950e448b4b62fe95554598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  studentInfo: {fileID: 0}
   targetData:
     _studentName: N/A
     _studentDescription: 
@@ -1519,16 +1521,18 @@ MonoBehaviour:
     _nationality: 
     _nationType: 0
     _legendaryStudentID: 0
-  intro: {fileID: 0}
-  extro: {fileID: 0}
-  calm: {fileID: 0}
-  emotion: {fileID: 0}
-  night: {fileID: 0}
-  early: {fileID: 0}
-  care: {fileID: 0}
-  explore: {fileID: 0}
-  non: {fileID: 0}
-  psychic: {fileID: 0}
+  intro: {fileID: 7601006301897484122}
+  extro: {fileID: 7654961260957337329}
+  calm: {fileID: 7432801008856465085}
+  emotion: {fileID: 1004161121394735645}
+  night: {fileID: 7241848591601650058}
+  early: {fileID: 3219376560025039584}
+  care: {fileID: 1635991830735309904}
+  explore: {fileID: 3162423374888271029}
+  non: {fileID: 2931337979547796661}
+  psychic: {fileID: 987668795724752406}
+  Yes: {r: 0.21176472, g: 0.15686275, b: 0.24313727, a: 1}
+  No: {r: 0.46166542, g: 0.44410822, b: 0.4716981, a: 1}
 --- !u!1 &4654773651960575042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,7 +2542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2784314}
+  m_Color: {r: 0.84391075, g: 0.5707547, b: 1, a: 0.34901962}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
