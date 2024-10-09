@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 92a9f121d0e2dd9418d8ff04e4972fd3, type: 3}
     - target: {fileID: 5187207328843628136, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Name
-      value: MainWindowTab
+      value: Main Window Tab
       objectReference: {fileID: 0}
     - target: {fileID: 8407800237300784567, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Pivot.x
@@ -7353,7 +7353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394036830}
   m_Layer: 5
-  m_Name: GameVariables
+  m_Name: "GameVariables \uFF08NoteBook\uFF09"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14833,7 +14833,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 387c1b30dcdf01440b9861363caed225, type: 3}
     - target: {fileID: 5187207328843628136, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Name
-      value: MainWindowTab(2)
+      value: Main Window Tab (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8407800237300784567, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Pivot.x
@@ -18450,7 +18450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963238775}
   m_Layer: 5
-  m_Name: ReviewViewCurrent
+  m_Name: Review View Current
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30212,7 +30212,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 387c1b30dcdf01440b9861363caed225, type: 3}
     - target: {fileID: 5187207328843628136, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Name
-      value: MainWindowTab (1)
+      value: Main Window Tab (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8407800237300784567, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Pivot.x
@@ -37739,7 +37739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871049631}
   m_Layer: 5
-  m_Name: OverViewContent
+  m_Name: OverView Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38753,7 +38753,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 387c1b30dcdf01440b9861363caed225, type: 3}
     - target: {fileID: 5187207328843628136, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Name
-      value: MainWindowTab(3)
+      value: Main Window Tab (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8407800237300784567, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
       propertyPath: m_Pivot.x
@@ -43448,7 +43448,7 @@ GameObject:
   - component: {fileID: 2142378082}
   - component: {fileID: 2142378085}
   m_Layer: 5
-  m_Name: MainWindow
+  m_Name: Main Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
