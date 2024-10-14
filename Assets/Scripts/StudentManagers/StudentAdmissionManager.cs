@@ -253,6 +253,8 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void AdmitCurrentStudent()
     {
+        
+
         StudentData data = studentInfo.data;
         if (data == null)
         {
@@ -262,6 +264,7 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (CanAdmit(data)) 
             {
+
                 SoundManager.Instance.PlaySFX("Admit");
                 SoundManager.Instance.PlaySFX("Click_OK");
                 SoundManager.Instance.PlaySFX("FileInCrush", 0.5f);
@@ -271,6 +274,7 @@ public class StudentAdmissionManager : MonoBehaviour
                 }
                 if (data != null)
                 {
+                    
                     gameAnimator.SetTrigger("Accept");
                     studentAdmitted += 1;
                     studentLeft -= 1;
@@ -306,7 +310,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                     averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);
                     averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
-
+                    
                     firstGenStudent += data._isFirstGen ? 1 : 0;
                     alumniStudent += data._isAlumni ? 1 : 0;
                     patronStudent += data._isPatron ? 1 : 0;
@@ -320,6 +324,7 @@ public class StudentAdmissionManager : MonoBehaviour
                     //================
 
                     //===Mini Goal Datas===
+                    #region
                     for (int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
                     {
                         MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
@@ -439,8 +444,9 @@ public class StudentAdmissionManager : MonoBehaviour
                             break;
 
                         }
-
+                        
                     }
+                    #endregion
                     MiniGoalManager.Instance.UpdateMiniGoalVisuals();
 
 
@@ -524,12 +530,26 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RandomlyPresentAStudent()
     {
-        studentImageAnimator.SetTrigger("LoadIn");
+
+        //=====Generate a new student=====
+        //In essense, student are genearted the moment the previous student is admited or rejected, instead of generated in advance.
+        //Student Generation Manager has this giant public function that will return a StudentData, which contains all the info for that particular student.
+
         StudentData data = studentGenerationManager.RandomGenerateStudent();
-        studentInfo.UpdateStudentInfo(data);
+
+        //================================
+
+
+        //====Visual Updates====
+
+        //animation
+        studentImageAnimator.SetTrigger("LoadIn");
+
+        studentInfo.UpdateStudentInfo(data);//Student info is a visual controller, so does preferences manager and boolean manager.
         preferencesManager.SetBars(data._extroversion-1,data._magicalPersonality-1,data._schedule-1,data._explorativity-1,data._psionicAffinity-1);
         booleanManager.SetChecks(data._isFirstGen,data._isAlumni,data._isPatron);
         textFormater.Determine();
+        //====Visual Updates====
 
     }
 

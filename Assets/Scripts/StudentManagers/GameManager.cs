@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         mainScreenAnimator = gameTabs[0].GetComponent<Animator>();
         mainScreenAnimator.SetTrigger("LoadIn");
         Debug.Log("now level data id=" + currentLevelID);
-        if(currentLevelID > 0){
+        if(currentLevelID > 0 && AdsManager.Instance != null){
             AdsManager.Instance.interstitialAds.Invoke("ShowInterstitialAd", 1f);
         }
     }
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         dayText.text = "Day " + (currentLevelID+1).ToString();
-        Debug.Log("updating level data id=" + currentLevelID);
+        //Debug.Log("updating level data id=" + currentLevelID);
 
     }
     public void GameLose()
@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
 
     public void ReloadCurrentScene()
     {
+        Debug.Log("reloading current scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
     }

@@ -20,7 +20,7 @@ public class StudentGenerationManager : MonoBehaviour
     [Space]
     //====Personal Info====
     //==scales==
-    [Header("Personal Info")]
+    [Header("Preferences")]
     [Range(0.0f, 100.0f)]
     public int extroversionPercentage;
     [Range(0.0f, 100.0f)]
@@ -34,6 +34,7 @@ public class StudentGenerationManager : MonoBehaviour
     [Range(0.0f, 100.0f)]
     public int psionicAffinityPercentage;
     [Space]
+    [Header("Bools")]
     [Range(0.0f, 100.0f)]
     public int verteranPercentage;
     [Range(0.0f, 100.0f)]
@@ -69,19 +70,15 @@ public class StudentGenerationManager : MonoBehaviour
     private List<RaceData> raceDatas = new List<RaceData>();
 
 
-
-
     //========================
 
     //======Legendary Student=======
     public List<StudentData> allLegendaryStudentList;
     public List<StudentData> remainingLegendaryStudentList;
 
-
-
     //==============================
 
-    //=================
+
 
     //======Visuals Inits========
     public List<string> firstNames;

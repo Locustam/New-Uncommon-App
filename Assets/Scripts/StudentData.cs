@@ -16,8 +16,10 @@ public class StudentData
     public int _academic;
     public int _finance;
 
-
     //=====================
+
+
+
 
     //=====Sprites=========
     public Sprite _ASprite;
@@ -29,15 +31,14 @@ public class StudentData
     public Sprite _GSprite;
 
     public Sprite _HSprite;
-
     public Sprite _ISprite;
-
 
     //=====================
 
 
+
     //====Personal Info====
-    //==scales==
+    //==preferences==
     public int _extroversion;
     public int _magicalPersonality;
     public int _workplace;
@@ -67,12 +68,6 @@ public class StudentData
     //==========
 
     public int _legendaryStudentID;
-
-
-
-
-
-
 
     //======================
 
