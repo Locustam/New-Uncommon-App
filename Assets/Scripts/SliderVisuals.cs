@@ -20,20 +20,23 @@ public class SliderVisuals : MonoBehaviour
     public void UpdateSliderColor()
     {
         var value = GetComponent<Slider>().value;
-        Color color = colorList[0];
-        for(int i = 0; i < threshHolds.Count; i++)
+        if (value != null)
         {
-            if(value > threshHolds[i])
+            Color color = colorList[0];
+            for (int i = 0; i < threshHolds.Count; i++)
             {
-                color = colorList[i];
+                if (value > threshHolds[i])
+                {
+                    color = colorList[i];
+                }
+                else
+                {
+                    break;
+                }
             }
-            else
-            {
-                break;
-            }
-        }
 
-        fillImage.color = color;
+            fillImage.color = color;
+        }
 
     }
 

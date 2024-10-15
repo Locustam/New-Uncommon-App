@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
 
+    public int playerMaxHealth = 5;
+    public int playerHealth = 5;
+    
+
     // Public accessor for the singleton instance
     public static GameManager Instance
     {

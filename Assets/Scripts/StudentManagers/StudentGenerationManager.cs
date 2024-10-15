@@ -84,6 +84,8 @@ public class StudentGenerationManager : MonoBehaviour
     public List<string> firstNames;
     [SerializeField] List<string> lastNames;
     [SerializeField] TextFormater textFormater;
+    public List<string> collegeNames;
+    public List<string> nonCollegeNames;
     //================================
 
 
@@ -110,6 +112,11 @@ public class StudentGenerationManager : MonoBehaviour
 
         var _lastNames = new[] { "Bastal", "Fowler", "Francis", "Tiaki", "Xulu", "Moonbeam", "Featherwing", "Lousu", "Yenwi", "Crookshank", "Ultra", "Maximus", "Smith", "Jones", "Sanada", "Zero", "Miite", "Russo", "Virilous", "Tiger", "Tanjiro", "Eoun", "Uwoni", "Hunter", "Lilywhite", "Crow", "Wisdom", "Seacastle", "Strongjaw", "Wubif"};
         lastNames.AddRange(_lastNames);
+
+        var _collegeNames = new[] {"Unmeiia University", "Nystal University", "Tendiyu University", "Ovyeka University", "Gessurd" };
+        var _nonCollegeNames = new[] { "Unmeiia High", " Unmeiia High", "Nystal High" };
+        collegeNames.AddRange(_collegeNames);
+        nonCollegeNames.AddRange(_nonCollegeNames);
 
         //=====Race Data import=====
         // Load all RaceData assets from the specified Resources folder
@@ -173,6 +180,9 @@ public class StudentGenerationManager : MonoBehaviour
         if (race != null/*race == "Elf" || race == "Tanuki" || race == "Gnome" || race == "Human" || race == "Wyrm" || race == "Ogre"*/)
         {
             RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
+
+            //===Student portrait generate===
+            #region
             List<Sprite> dataSpriteList = new List<Sprite>() { data._ASprite,data._BSprite,data._CSprite,data._DSprite,data._ESprite,data._FSprite,data._GSprite};
             data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
             if (raceData.BSpriteList.Count > 0)
@@ -189,12 +199,17 @@ public class StudentGenerationManager : MonoBehaviour
                 data._HSprite = raceData.HSpriteList[Random.Range(0, raceData.HSpriteList.Count)];
             }
 
+            #endregion
+            //===============================
+
             string firstName = firstNames[Random.Range(0, firstNames.Count)];
+            data._firstName = firstName;
             string lastName = lastNames[Random.Range(0, lastNames.Count)];
+            data._lastName = lastName;
             data._studentName = "<bounce a=0.1 f=0.3 w=1>"+firstName + " " + lastName+"</bounce>";
 
             //=======National Information======
-
+            #region
             bool isLocal = (Random.Range(0, 100) < firstNationPercentage);
             if (isLocal)
             {
@@ -237,9 +252,16 @@ public class StudentGenerationManager : MonoBehaviour
             }
 
             Debug.Log("This student is from " + data._nationality);
+            #endregion
+            //=================================
         }
 
+
         //=====Legendary Student Check======
+        #region
+        //jh the legendary studnent generation logic works like this:
+        //if legendary student is unlocked, every time a new random student is generated, it has a chance to be a legendary student
+        //that chance is a variable that could be adjusted
         if (GameManager.Instance.levelDataList[GameManager.Instance.currentLevelID].features.Exists(f => f.includedFeature == Feature.feature.legendaryStudents))
         {
             float ff = Random.Range(0, 100);
@@ -261,12 +283,13 @@ public class StudentGenerationManager : MonoBehaviour
 
         //if not legendary studnent, set var to false
         data._legendaryStudentID = 0;
-
+        #endregion
         //==================================
 
 
 
         //===Finance and academic====
+        #region
         data._finance = Random.Range(0, 100);
         data._academic = Random.Range(0, 100);
 
@@ -297,21 +320,85 @@ public class StudentGenerationManager : MonoBehaviour
             data._finance = Mathf.Max(0,data._finance - 20);
             data._academic = Mathf.Min(100, data._academic + 40);
         }
+        #endregion
         //============================
 
         //=======Personal Information======
-        //==checks==
-        data._isAlumni = (Random.Range(0, 100) < alumniPercentage);
+        //==booleans==
+        //parent info
+        string fatherFirstName = firstNames[Random.Range(0, firstNames.Count)];
+        string motherFirstName = firstNames[Random.Range(0, firstNames.Count)];
+        string motherLastName = lastNames[Random.Range(0, lastNames.Count)];
+        data._fatherName = fatherFirstName + " " + data._lastName;
+        data._motherName = motherFirstName + " " + motherLastName;
+
+        //first gen/ alumni
+        data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
+        if (data._isFirstGen)
+        {
+            //if first gen, set parent education to non-colleges
+            data._fatherEducation = nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
+            data._motherEducation = nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
+        }
+        else
+        {
+            //only non-first gen student could be alumni, vice versa
+            data._isAlumni = (Random.Range(0, 100) < alumniPercentage);
+            if (data._isAlumni)
+            {
+                bool fatherHasUniversityDegree = Random.value < 0.5f; // 50% chance for father to have the university degree
+
+                if (fatherHasUniversityDegree)
+                {
+                    // Father gets a university degree
+                    data._fatherEducation = Random.value < 0.5f ? "Uncommon University" : collegeNames[Random.Range(0, collegeNames.Count)];
+                    // Mother has a 50% chance of either college or non-college name
+                    data._motherEducation = Random.value < 0.5f ? collegeNames[Random.Range(0, collegeNames.Count)] : nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
+                }
+                else
+                {
+                    // Mother gets a university degree
+                    data._motherEducation = Random.value < 0.5f ? "Uncommon University" : collegeNames[Random.Range(0, collegeNames.Count)];
+                    // Father has a 50% chance of either college or non-college name
+                    data._fatherEducation = Random.value < 0.5f ? collegeNames[Random.Range(0, collegeNames.Count)] : nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
+                }
+            }
+            else
+            {
+                bool fatherHasUniversityDegree = Random.value < 0.5f; // 50% chance for father to have the university degree
+
+                if (fatherHasUniversityDegree)
+                {
+                    // Father gets a university degree
+                    data._fatherEducation = Random.value < 0.5f ? "Uncommon University" : collegeNames[Random.Range(0, collegeNames.Count)];
+                    // Mother has a 50% chance of either college or non-college name
+                    data._motherEducation = Random.value < 0.5f ? collegeNames[Random.Range(0, collegeNames.Count)] : nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
+                }
+                else
+                {
+                    // Mother gets a university degree
+                    data._motherEducation = Random.value < 0.5f ? "Uncommon University" : collegeNames[Random.Range(0, collegeNames.Count)];
+                    // Father has a 50% chance of either college or non-college name
+                    data._fatherEducation = Random.value < 0.5f ? collegeNames[Random.Range(0, collegeNames.Count)] : nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
+                }
+            }
+
+
+        }
+
+
+        //patron 
         if (data._finance >= 90)
         {
             Debug.Log("this student is patron");
             data._isPatron = (Random.Range(0, 100) < patronPercentage);
         }
-        data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
+
         //==========
 
 
-        //==bars==
+        //==preferences==
+        #region
         //extroversion
         float e = Random.Range(1, extroversionPercentage) * 0.025f;
         if(extroversionPercentage < 50)
@@ -364,8 +451,9 @@ public class StudentGenerationManager : MonoBehaviour
             p  *= -1f;
         }
         data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
+        #endregion
         //=======
-        
+
 
 
 

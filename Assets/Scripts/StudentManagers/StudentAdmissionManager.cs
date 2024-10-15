@@ -18,6 +18,8 @@ public class StudentAdmissionManager : MonoBehaviour
     [SerializeField] PreferencesManager preferencesManager;
     [SerializeField] BooleanManager booleanManager;
     public NewspaperManager newspaperManager;
+    [SerializeField] ChecklistController checklistController;
+    [SerializeField] ChecklistReviewManager checklistReveiwManager;
 
     public Animator gameAnimator;
     [SerializeField] Animator studentImageAnimator;
@@ -39,7 +41,6 @@ public class StudentAdmissionManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI averageFinanceText;
     [SerializeField] TextMeshProUGUI averageAcademicText;
     [SerializeField] TextMeshProUGUI totalScholarshipText;
-    [SerializeField] Image averageAcademicGlobe;//Not in use
     [SerializeField] Slider averageFinanceSlider;
     [SerializeField] Slider averageAcademicSlider;
     [SerializeField] Slider totalScholarshipSlider;
@@ -121,6 +122,10 @@ public class StudentAdmissionManager : MonoBehaviour
 
     private void Update()
     {
+        //==============Win/Lose check===============
+        #region
+        //jh this is a check of end game, it is a series of condtionals
+        //Currently GameManager.Instance.WinOrNot is triggered inside animation event
         if (GameManager.Instance.inGame)
         {
             if (studentAdmitted > studentRequired)
@@ -166,6 +171,8 @@ public class StudentAdmissionManager : MonoBehaviour
             }
 
         }
+        #endregion
+        //=============================================
     }
 
 
@@ -173,7 +180,8 @@ public class StudentAdmissionManager : MonoBehaviour
     public void UpdateAllVisuals()
     {
         LegendaryStudentManager.Instance.ClearLegendaryStudentVisuals();
-        if(averageFinance <= financeDangerLine)
+        checklistController.ClearAllToggles();
+        if (averageFinance <= financeDangerLine)
         {
             averageFinanceText.color = colorUrgent;
             averageFinanceText.text = "<shake a = 2>" + averageFinance.ToString() + "</shake>";
@@ -209,7 +217,6 @@ public class StudentAdmissionManager : MonoBehaviour
         averageFinanceSlider.value = averageFinance;
         averageAcademicSlider.value = averageAcademic;
         totalScholarshipSlider.value = totalScholarship;
-        averageAcademicGlobe.fillAmount = averageAcademic / 100f;
         if(studentLeft + studentAdmitted <= studentRequired)
         {
             studentAdmittedVSRequiredText.color = colorUrgent;
@@ -241,7 +248,6 @@ public class StudentAdmissionManager : MonoBehaviour
         averageFinanceSlider.value = averageFinance;
         averageAcademicSlider.value = averageAcademic;
         totalScholarshipSlider.value = totalScholarship;
-        averageAcademicGlobe.fillAmount = averageAcademic / 100f;
         studentAdmittedVSRequiredText.text = studentAdmitted.ToString() + "/" + studentRequired;*/
         if (studentLeft < 10)
         {
@@ -253,8 +259,6 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void AdmitCurrentStudent()
     {
-        
-
         StudentData data = studentInfo.data;
         if (data == null)
         {
@@ -264,6 +268,15 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (CanAdmit(data)) 
             {
+                bool checkListPassed;
+                if(checklistReveiwManager.ReviewChecklist(data))
+                {
+                    checkListPassed = true;
+                }
+                else
+                {
+                    checkListPassed = false;
+                }
 
                 SoundManager.Instance.PlaySFX("Admit");
                 SoundManager.Instance.PlaySFX("Click_OK");
@@ -325,124 +338,126 @@ public class StudentAdmissionManager : MonoBehaviour
 
                     //===Mini Goal Datas===
                     #region
-                    for (int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
-                    {
-                        MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
-
-                        switch (goal.label)
+                    if (checklistPassed) {
+                        for (int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
                         {
-                            case "introverted":
-                                if (data._extroversion <= 2)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                            MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
 
-                            break;
+                            switch (goal.label)
+                            {
+                                case "introverted":
+                                    if (data._extroversion <= 2)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "extroverted":
-                                if (data._extroversion >= 4)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "extroverted":
+                                    if (data._extroversion >= 4)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "calm":
-                                if (data._magicalPersonality <= 2)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "calm":
+                                    if (data._magicalPersonality <= 2)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "emotional":
-                                if (data._magicalPersonality >= 4)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "emotional":
+                                    if (data._magicalPersonality >= 4)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "night owl":
-                                if (data._schedule <= 2)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "night owl":
+                                    if (data._schedule <= 2)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "early bird":
-                                if (data._schedule >= 4)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "early bird":
+                                    if (data._schedule >= 4)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "careful":
-                                if (data._explorativity <= 2)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "careful":
+                                    if (data._explorativity <= 2)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "explorative":
-                                if (data._explorativity >= 4)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "explorative":
+                                    if (data._explorativity >= 4)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "non-psychic":
-                                if (data._psionicAffinity <= 2)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "non-psychic":
+                                    if (data._psionicAffinity <= 2)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "psychic":
-                                if (data._psionicAffinity >= 4)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "psychic":
+                                    if (data._psionicAffinity >= 4)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "1st-gen":
-                                if (data._isFirstGen)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "1st-gen":
+                                    if (data._isFirstGen)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "legacy":
-                                if (data._isAlumni)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "legacy":
+                                    if (data._isAlumni)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "patron":
-                                if (data._isPatron)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "patron":
+                                    if (data._isPatron)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
-                            case "oyveka":
-                                if(data._nationType == RaceData.NationType.Ovyeka)
-                                {
-                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                                }
+                                    break;
 
-                            break;
+                                case "oyveka":
+                                    if (data._nationType == RaceData.NationType.Ovyeka)
+                                    {
+                                        MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                    }
 
+                                    break;
+
+                            }
                         }
                         
                     }
@@ -463,6 +478,10 @@ public class StudentAdmissionManager : MonoBehaviour
         
     }
 
+    public void DecreasePlayerHealth(int amount)
+    {
+
+    }
     public bool CanAdmit(StudentData data)
     {
         if (totalScholarship >= financeRequired - data._finance)
@@ -516,6 +535,7 @@ public class StudentAdmissionManager : MonoBehaviour
         
     }
 
+    /*
     public void WaitlistCurrentStudent()
     {
         StudentData data = studentInfo.data;
@@ -526,6 +546,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
         Invoke("RandomlyPresentAStudent",0.3f);
     }
+    */
 
 
     public void RandomlyPresentAStudent()
@@ -534,6 +555,7 @@ public class StudentAdmissionManager : MonoBehaviour
         //=====Generate a new student=====
         //In essense, student are genearted the moment the previous student is admited or rejected, instead of generated in advance.
         //Student Generation Manager has this giant public function that will return a StudentData, which contains all the info for that particular student.
+
 
         StudentData data = studentGenerationManager.RandomGenerateStudent();
 
@@ -547,12 +569,13 @@ public class StudentAdmissionManager : MonoBehaviour
 
         studentInfo.UpdateStudentInfo(data);//Student info is a visual controller, so does preferences manager and boolean manager.
         preferencesManager.SetBars(data._extroversion-1,data._magicalPersonality-1,data._schedule-1,data._explorativity-1,data._psionicAffinity-1);
-        booleanManager.SetChecks(data._isFirstGen,data._isAlumni,data._isPatron);
+        booleanManager.SetChecks(data);
         textFormater.Determine();
         //====Visual Updates====
 
     }
 
+    /*
     public void UpdateAdmittedStudentInfo()
     {
         // Destroy all child objects of admittedStudentContentParent
@@ -571,6 +594,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
     }
 
+    
     public void UpdateRejectedStudentInfo()
     {
         // Destroy all child objects of admittedStudentContentParent
@@ -588,7 +612,9 @@ public class StudentAdmissionManager : MonoBehaviour
             studentContent.GetComponent<StudentInfoContent>().data = studentData;
         }
     }
+    
 
+    
     public void UpdateWaitlistedStudentInfo()
     {
         // Destroy all child objects of admittedStudentContentParent
@@ -606,5 +632,6 @@ public class StudentAdmissionManager : MonoBehaviour
             studentContent.GetComponent<StudentInfoContent>().data = studentData;
         }
     }
+    */
 
 }
