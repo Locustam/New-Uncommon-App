@@ -6,9 +6,9 @@ using TMPro;
 
 public class BooleanManager : MonoBehaviour
 {
-    [SerializeField] GameObject alumniToggle;
-    [SerializeField] GameObject firstGenToggle;
-    [SerializeField] GameObject patronToggle;
+    [SerializeField] Toggle alumniToggle;
+    [SerializeField] Toggle firstGenToggle;
+    [SerializeField] Toggle patronToggle;
     [SerializeField] TextMeshProUGUI fatherNameText;
     [SerializeField] TextMeshProUGUI fatherEducationText;
     [SerializeField] TextMeshProUGUI motherNameText;
@@ -39,11 +39,11 @@ public class BooleanManager : MonoBehaviour
 
         if (data._isPatron)
         {
-            patronToggle.SetActive(true);
+            patronToggle.isOn = true;
         }
         else
         {
-            patronToggle.SetActive(false);
+            patronToggle.isOn = false;
         }
 
         fatherNameText.text = data._fatherName;

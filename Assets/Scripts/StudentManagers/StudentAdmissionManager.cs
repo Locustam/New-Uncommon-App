@@ -20,6 +20,7 @@ public class StudentAdmissionManager : MonoBehaviour
     public NewspaperManager newspaperManager;
     [SerializeField] ChecklistController checklistController;
     [SerializeField] ChecklistReviewManager checklistReveiwManager;
+    [SerializeField] HealthController healthController;
 
     public Animator gameAnimator;
     [SerializeField] Animator studentImageAnimator;
@@ -268,14 +269,15 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (CanAdmit(data)) 
             {
-                bool checkListPassed;
+                bool checklistPassed;
                 if(checklistReveiwManager.ReviewChecklist(data))
                 {
-                    checkListPassed = true;
+                    checklistPassed = true;
                 }
                 else
                 {
-                    checkListPassed = false;
+                    checklistPassed = false;
+                    DecreasePlayerHealth(1);
                 }
 
                 SoundManager.Instance.PlaySFX("Admit");
@@ -480,7 +482,14 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void DecreasePlayerHealth(int amount)
     {
+        GameManager.Instance.playerHealth -= amount;
 
+        healthController.UpdateHealthSign(GameManager.Instance.playerHealth, GameManager.Instance.playerMaxHealth);
+        if(GameManager.Instance.playerHealth <= 0)
+        {
+            GameManager.Instance.win = false;
+            GameManager.Instance.LoadOut();
+        }
     }
     public bool CanAdmit(StudentData data)
     {
