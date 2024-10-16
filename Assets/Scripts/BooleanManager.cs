@@ -46,10 +46,10 @@ public class BooleanManager : MonoBehaviour
             patronToggle.isOn = false;
         }
 
-        fatherNameText.text = data._fatherName;
-        fatherEducationText.text = data._fatherEducation;
-        motherNameText.text = data._motherName;
-        motherEducationText.text = data._motherEducation;
+        fatherNameText.text = "Father: " + data._fatherName;
+        fatherEducationText.text = "Education: " + data._fatherEducation;
+        motherNameText.text = "Mother: " + data._motherName;
+        motherEducationText.text = "Education: " + data._motherEducation;
         Debug.Log("father name" + fatherNameText.text);
     }
 

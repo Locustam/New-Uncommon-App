@@ -113,7 +113,7 @@ public class StudentGenerationManager : MonoBehaviour
         var _lastNames = new[] { "Bastal", "Fowler", "Francis", "Tiaki", "Xulu", "Moonbeam", "Featherwing", "Lousu", "Yenwi", "Crookshank", "Ultra", "Maximus", "Smith", "Jones", "Sanada", "Zero", "Miite", "Russo", "Virilous", "Tiger", "Tanjiro", "Eoun", "Uwoni", "Hunter", "Lilywhite", "Crow", "Wisdom", "Seacastle", "Strongjaw", "Wubif"};
         lastNames.AddRange(_lastNames);
 
-        var _collegeNames = new[] {"Unmeiia University", "Nystal University", "Tendiyu University", "Ovyeka University", "Gessurd" };
+        var _collegeNames = new[] {"Unmeiia University", "Nystal University", "Tendiyu University", "Ovyeka University", "Gessurd University" };
         var _nonCollegeNames = new[] { "Unmeiia High", " Unmeiia High", "Nystal High" };
         collegeNames.AddRange(_collegeNames);
         nonCollegeNames.AddRange(_nonCollegeNames);
