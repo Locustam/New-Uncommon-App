@@ -242,16 +242,51 @@ public class SmartAnimationHierarchy : EditorWindow
         // Find all GameObjects with matching names in the hierarchy
         GameObject[] matchingObjects = FindObjectsByName(lastPart);
 
-        // Only return the path if the name is unique
+        // Handle duplicated names
         if (matchingObjects.Length == 1)
         {
+            // If only one object matches, use it
             return ChildPath(matchingObjects[0]);
         }
-        else
+        else if (matchingObjects.Length > 1)
         {
-            Debug.LogWarning($"No unique GameObject found for '{lastPart}' in the hierarchy.");
-            return null;
+            // Handle duplicates by showing a popup for the user to select the correct one
+            int selectedIndex = ShowDuplicateSelectionPopup(matchingObjects, path);
+            if (selectedIndex >= 0)
+            {
+                return ChildPath(matchingObjects[selectedIndex]);
+            }
         }
+
+        Debug.LogWarning($"No unique GameObject found for '{lastPart}' in the hierarchy.");
+        return null;
+    }
+
+    int ShowDuplicateSelectionPopup(GameObject[] matchingObjects, string originalPath)
+    {
+        // Create a list of paths to display in the popup
+        string[] options = new string[matchingObjects.Length];
+        for (int i = 0; i < matchingObjects.Length; i++)
+        {
+            options[i] = ChildPath(matchingObjects[i]); // Display full path for each duplicate
+        }
+
+        // Display the popup
+        int selectedIndex = EditorUtility.DisplayDialogComplex(
+            "Select GameObject",
+            $"Multiple GameObjects found with the name '{matchingObjects[0].name}' for the path '{originalPath}'. Please select the correct object:",
+            options[0], // Option 1 (select the first object)
+            "Cancel",   // Cancel button
+            null        // No third button needed
+        );
+
+        // If user cancels or closes the dialog, return -1
+        if (selectedIndex == 1 || selectedIndex == -1)
+        {
+            return -1;
+        }
+
+        return selectedIndex;
     }
 
     GameObject[] FindObjectsByName(string name)
