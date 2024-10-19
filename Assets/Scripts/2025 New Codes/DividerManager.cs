@@ -112,14 +112,17 @@ public class DividerManager : MonoBehaviour
         // Activate the corresponding page
         for (int i = 0; i < pages.Length; i++)
         {
-            if (i == index)
+            if (pages[i] != null)
             {
-                pages[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                pages[i].gameObject.SetActive(false);
-            }
+                if (i == index)
+                {
+                    pages[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    pages[i].gameObject.SetActive(false);
+                }
+            }        
         }
     }
 }
