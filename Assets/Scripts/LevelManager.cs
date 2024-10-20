@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
         StudentGenerationManager.Instance.patronPercentage = levelData.patronPercentage;
         
         StudentAdmissionManager.Instance.academicMultiplier = levelData.academicMultiplier;
-        StudentAdmissionManager.Instance.financeMultiplier = levelData.financeMultiplier;
+        //StudentAdmissionManager.Instance.financeMultiplier = levelData.financeMultiplier; no longer needed for the new finance system
         StudentAdmissionManager.Instance.studentLeft = levelData.studentLeft;
         StudentAdmissionManager.Instance.studentRequired = levelData.studentRequired;
         StudentAdmissionManager.Instance.initialScholarship = levelData.initialScholarship;

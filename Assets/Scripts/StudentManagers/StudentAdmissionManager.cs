@@ -75,17 +75,32 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public int financeRequired = 100;
 
-    public int financeMidValue = 50;
+    //=====Main Variables======
+    
+    //Due to historical reasons, its called average academic/finance, but it really means total academic/finance
+    //
     public int academicMidValue = 50;
-    public int averageFinance = 50;
+    [Header("Total Academic(averageAcademic)")]
     public int averageAcademic = 50;
+
+    [Header("Total Finance(averageFinance)")]
+    //public int financeMidValue = 50;//no longer useful for new finance system
+    public int averageFinance = 0;
+    public int financeMax;
+    
+
     public int totalScholarship;
     public int initialScholarship = 1000;
+    //If the game ended below the dangewr lines, the player loses
     public int financeDangerLine = 40;
     public int academicDangerLine = 40;
 
-    public float financeMultiplier = 0.1f;
+    //public float financeMultiplier = 0.1f;//no longer useful for new finance system
     public float academicMultiplier = 0.2f;
+
+
+    //===========================
+
 
 
     //====Personal Info=====
@@ -214,10 +229,17 @@ public class StudentAdmissionManager : MonoBehaviour
             totalScholarshipText.text = totalScholarship.ToString();
         }
             
-
+        //====Setting the sliders====
         averageFinanceSlider.value = averageFinance;
+        averageFinanceSlider.maxValue = financeMax;
+        averageFinanceSlider.GetComponent<SliderVisuals>().threshHolds[1] = financeDangerLine;//setting the color that displays red for finance
+
         averageAcademicSlider.value = averageAcademic;
         totalScholarshipSlider.value = totalScholarship;
+
+        //============================
+
+
         if(studentLeft + studentAdmitted <= studentRequired)
         {
             studentAdmittedVSRequiredText.color = colorUrgent;
@@ -323,7 +345,10 @@ public class StudentAdmissionManager : MonoBehaviour
                         }
                     }
 
-                    averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);
+                    //averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier); //Old Finance Calc
+                    //New finance calc
+                    averageFinance += data._finance;
+
                     averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
                     
                     firstGenStudent += data._isFirstGen ? 1 : 0;

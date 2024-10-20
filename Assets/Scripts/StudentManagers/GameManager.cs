@@ -20,13 +20,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject legendaryStudentPanel;
     [SerializeField] GameObject creditScreen;
     [SerializeField] TextMeshProUGUI dayText;
+
+    public int playerMaxHealth;
+    public int playerHealth;
+
     private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
     public LevelManager currentLevelManager;
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
 
-    public int playerMaxHealth = 5;
-    public int playerHealth = 5;
+
     
 
     // Public accessor for the singleton instance

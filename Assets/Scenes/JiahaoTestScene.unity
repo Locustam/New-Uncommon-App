@@ -10970,15 +10970,14 @@ MonoBehaviour:
   patronScholarshipBonus: 50
   studentAdmitted: 0
   financeRequired: 100
-  financeMidValue: 50
   academicMidValue: 50
-  averageFinance: 50
   averageAcademic: 50
+  averageFinance: 0
+  financeMax: 10000
   totalScholarship: 0
   initialScholarship: 500
-  financeDangerLine: 40
+  financeDangerLine: 5000
   academicDangerLine: 40
-  financeMultiplier: 0.1
   academicMultiplier: 0.3
   firstGenStudent: 0
   alumniStudent: 0
@@ -27666,6 +27665,8 @@ MonoBehaviour:
   legendaryStudentPanel: {fileID: 610602336}
   creditScreen: {fileID: 68118680}
   dayText: {fileID: 1518868477}
+  playerMaxHealth: 3
+  playerHealth: 3
   currentLevelManager: {fileID: 0}
   levelDataList:
   - {fileID: 11400000, guid: b1af0f8f93e0748ee99d8ff21add4191, type: 2}
@@ -27695,8 +27696,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc8228f8e97994b6997fc8a29a1de265, type: 2}
   - {fileID: 11400000, guid: a9fcfda377c9d4338b6ae4cb40bc8763, type: 2}
   currentLevelID: 15
-  playerMaxHealth: 3
-  playerHealth: 3
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0

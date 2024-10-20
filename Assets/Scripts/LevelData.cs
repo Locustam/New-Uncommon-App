@@ -8,7 +8,7 @@ public class LevelData : ScriptableObject
 {
     [Header("Multipliers")]
     public float academicMultiplier;
-    public float financeMultiplier;
+    //public float financeMultiplier; // no longer needed for the new finance system
     [Header("How many student in total")]
     public int studentLeft;
 
