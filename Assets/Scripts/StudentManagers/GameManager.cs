@@ -183,13 +183,13 @@ public class GameManager : MonoBehaviour
         //legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
         legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
         //legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
-        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
+        SoundManager.Instance.PlaySFX(legendaryStudentPanelOpen? "Click_ChatOpen" : "Click_ChatClose");
     }
 
     public void ToggleCreditScreen()
     {
         creditScreen.GetComponent<Animator>().SetBool("Expand", creditScreenOpen = !creditScreenOpen);
-        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
+        SoundManager.Instance.PlaySFX(creditScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
 
