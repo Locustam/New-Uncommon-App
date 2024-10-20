@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Level0
   m_EditorClassIdentifier: 
   academicMultiplier: 0.5
-  financeMultiplier: 0.5
   studentLeft: 40
   studentRequired: 5
   initialScholarship: 300
+  financeMax: 2000
+  financeDangerLine: 700
   goodStudentPercentage: 21
   badStudentPercentage: 29
   richStudentPercentage: 40
@@ -34,3 +35,4 @@ MonoBehaviour:
   stateSponsoredPercentage: 40
   miniGoalPool: []
   features: []
+  singleMessages: []

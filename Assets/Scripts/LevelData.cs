@@ -17,6 +17,10 @@ public class LevelData : ScriptableObject
 
     public int initialScholarship = 500;
 
+    [Header("Finance Variables")]
+    public int financeMax;
+    public int financeDangerLine;
+
     //=====Testing=====
     [Range(0.0f, 100.0f)]
     public int goodStudentPercentage;

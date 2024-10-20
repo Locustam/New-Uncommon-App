@@ -232,7 +232,10 @@ public class StudentAdmissionManager : MonoBehaviour
         //====Setting the sliders====
         averageFinanceSlider.value = averageFinance;
         averageFinanceSlider.maxValue = financeMax;
-        averageFinanceSlider.GetComponent<SliderVisuals>().threshHolds[1] = financeDangerLine;//setting the color that displays red for finance
+        SliderVisuals financeSliderColor = averageFinanceSlider.GetComponent<SliderVisuals>();
+        financeSliderColor.threshHolds[1] = financeDangerLine;//setting the color that displays red for finance
+        financeSliderColor.threshHolds[2] = financeDangerLine + (financeMax-financeDangerLine)/2; //setting the color that displays yellow
+        financeSliderColor.UpdateSliderColor();
 
         averageAcademicSlider.value = averageAcademic;
         totalScholarshipSlider.value = totalScholarship;

@@ -22,27 +22,32 @@ public class LevelManager : MonoBehaviour
     {
         //SetCurrentLevel(GameManager.Instance.currentLevelID);
         if(levelData != null){
-        StudentGenerationManager.Instance.goodStudentPercentage =  levelData.goodStudentPercentage;
-        StudentGenerationManager.Instance.badStudentPercentage = levelData.badStudentPercentage;
-        StudentGenerationManager.Instance.richStudentPercentage = levelData.richStudentPercentage;
-        StudentGenerationManager.Instance.poorStudentPercentage = levelData.poorStudentPercentage;
-        StudentGenerationManager.Instance.extroversionPercentage = levelData.extroversionPercentage;
-        StudentGenerationManager.Instance.magicalPersonalityPercentage =   levelData.magicalPersonalityPercentage;
-        StudentGenerationManager.Instance.workplacePercentage = levelData.workplacePercentage;
-        StudentGenerationManager.Instance.schedulePercentage = levelData.schedulePercentage;
-        StudentGenerationManager.Instance.explorativityPercentage = levelData.explorativityPercentage;
-        StudentGenerationManager.Instance.psionicAffinityPercentage = levelData.psionicAffinityPercentage;
-        StudentGenerationManager.Instance.verteranPercentage = levelData.verteranPercentage;
-        StudentGenerationManager.Instance.alumniPercentage = levelData.alumniPercentage;
-        StudentGenerationManager.Instance.patronPercentage = levelData.patronPercentage;
+        StudentGenerationManager genManager = StudentGenerationManager.Instance;
+        StudentAdmissionManager admitManager = StudentAdmissionManager.Instance;
+
+        genManager.goodStudentPercentage =  levelData.goodStudentPercentage;
+        genManager.badStudentPercentage = levelData.badStudentPercentage;
+        genManager.richStudentPercentage = levelData.richStudentPercentage;
+        genManager.poorStudentPercentage = levelData.poorStudentPercentage;
+        genManager.extroversionPercentage = levelData.extroversionPercentage;
+        genManager.magicalPersonalityPercentage =   levelData.magicalPersonalityPercentage;
+        genManager.workplacePercentage = levelData.workplacePercentage;
+        genManager.schedulePercentage = levelData.schedulePercentage;
+        genManager.explorativityPercentage = levelData.explorativityPercentage;
+        genManager.psionicAffinityPercentage = levelData.psionicAffinityPercentage;
+        genManager.verteranPercentage = levelData.verteranPercentage;
+        genManager.alumniPercentage = levelData.alumniPercentage;
+        genManager.patronPercentage = levelData.patronPercentage;
         
-        StudentAdmissionManager.Instance.academicMultiplier = levelData.academicMultiplier;
+        admitManager.academicMultiplier = levelData.academicMultiplier;
         //StudentAdmissionManager.Instance.financeMultiplier = levelData.financeMultiplier; no longer needed for the new finance system
-        StudentAdmissionManager.Instance.studentLeft = levelData.studentLeft;
-        StudentAdmissionManager.Instance.studentRequired = levelData.studentRequired;
-        StudentAdmissionManager.Instance.initialScholarship = levelData.initialScholarship;
-        StudentAdmissionManager.Instance.totalScholarship = levelData.initialScholarship;
-        StudentAdmissionManager.Instance.UpdateAllVisuals();
+        admitManager.studentLeft = levelData.studentLeft;
+        admitManager.studentRequired = levelData.studentRequired;
+        admitManager.initialScholarship = levelData.initialScholarship;
+        admitManager.totalScholarship = levelData.initialScholarship;
+        admitManager.financeMax = levelData.financeMax;
+        admitManager.financeDangerLine = levelData.financeDangerLine;
+        admitManager.UpdateAllVisuals();
          
 
         foreach(GameObject GO in featureObjects)

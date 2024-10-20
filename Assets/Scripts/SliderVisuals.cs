@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class SliderVisuals : MonoBehaviour
 {
-
+    
     public List<Color> colorList = new List<Color>();
     [Header("Note: The value below could be managed procedurally in code")]
     public List<int> threshHolds = new List<int>();
 
     [SerializeField] Image fillImage;
+
+    [Header("If a danger line indcation is needed, set a slider here:")]
+    [SerializeField] Slider dangerLineSlider;
 
     private void Start()
     {
@@ -37,6 +40,11 @@ public class SliderVisuals : MonoBehaviour
             }
 
             fillImage.color = color;
+            if (dangerLineSlider != null)
+            {
+                dangerLineSlider.value = threshHolds[1];
+                dangerLineSlider.maxValue = GetComponent<Slider>().maxValue;
+            }
         }
 
     }

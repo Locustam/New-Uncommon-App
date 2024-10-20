@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Level8
   m_EditorClassIdentifier: 
   academicMultiplier: 0.8
-  financeMultiplier: 0.7
   studentLeft: 25
   studentRequired: 20
   initialScholarship: 700
+  financeMax: 2000
+  financeDangerLine: 700
   goodStudentPercentage: 4
   badStudentPercentage: 22
   richStudentPercentage: 15
