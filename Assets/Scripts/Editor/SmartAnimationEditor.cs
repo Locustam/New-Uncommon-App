@@ -20,7 +20,7 @@ public class SmartAnimationEditor : EditorWindow
     private Mode currentMode = Mode.EditSpecificFrame;
     private Vector2 scrollPosition; // Add scroll position
 
-    [MenuItem("Window/Smart Animation Editor")]
+    [MenuItem("Window/Jiahao SmartAnimator/Smart Animation Editor")]
     static void ShowWindow()
     {
         EditorWindow.GetWindow<SmartAnimationEditor>("Smart Animation Editor");

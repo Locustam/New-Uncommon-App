@@ -19,7 +19,7 @@ public class SmartAnimationHierarchy : EditorWindow
     private Dictionary<string, string> tempPathOverrides;
     private Vector2 scrollPos = Vector2.zero;
 
-    [MenuItem("Window/Smart Animation Hierarchy")]
+    [MenuItem("Window/Jiahao SmartAnimator/Smart Animation Hierarchy")]
     static void ShowWindow()
     {
         EditorWindow.GetWindow<SmartAnimationHierarchy>();
