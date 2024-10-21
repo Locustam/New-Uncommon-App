@@ -26,7 +26,8 @@ public class MeritScholarshipController : MonoBehaviour
 
         scholarshipSlider.maxValue = maxValue;
         scholarshipSlider.value = Mathf.Clamp(minValue, minValue, maxValue);  // Clamp the initial value to be within bounds
-        financeText.text = StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship.ToString() + " (" + StudentAdmissionManager.Instance.studentInfo.data._finance.ToString() + " + " + (StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship - StudentAdmissionManager.Instance.studentInfo.data._finance).ToString() + " scholarships)";
+        RemoveValue(0);
+        financeText.text = GetScholarshipText();
 
     }
 
@@ -36,10 +37,10 @@ public class MeritScholarshipController : MonoBehaviour
         if (scholarshipSlider == null) return;
         if (StudentAdmissionManager.Instance.totalScholarship >= scholarshipSlider.value + amount - minValue)
         {
-            float newValue = scholarshipSlider.value + amount;
-            scholarshipSlider.value = Mathf.Clamp(newValue, minValue, maxValue);
+            float newValue = Mathf.Clamp(scholarshipSlider.value + amount, minValue, maxValue);
+            scholarshipSlider.value = newValue;
             StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship = (int)newValue;
-            financeText.text = StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship.ToString() + " (" + StudentAdmissionManager.Instance.studentInfo.data._finance.ToString() + " + " + (StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship - StudentAdmissionManager.Instance.studentInfo.data._finance).ToString() + " scholarships)";
+            financeText.text  = GetScholarshipText();
 
         }
     }
@@ -49,10 +50,15 @@ public class MeritScholarshipController : MonoBehaviour
     {
         if (scholarshipSlider == null) return;
 
-        float newValue = scholarshipSlider.value - amount;
+        float newValue = Mathf.Clamp(scholarshipSlider.value - amount, minValue, maxValue);
         scholarshipSlider.value = Mathf.Clamp(newValue, minValue, maxValue);
         StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship = (int)newValue;
-        financeText.text = StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship.ToString() + " (" + StudentAdmissionManager.Instance.studentInfo.data._finance.ToString() + " + " + (StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship - StudentAdmissionManager.Instance.studentInfo.data._finance).ToString() + " scholarships)";
+        financeText.text  = GetScholarshipText();
 
+    }
+
+    public string GetScholarshipText()
+    {
+        return StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship.ToString() + " (" + StudentAdmissionManager.Instance.studentInfo.data._finance.ToString() + " + " + (Mathf.Max(0, StudentAdmissionManager.Instance.studentInfo.data._financeWithScholarship - StudentAdmissionManager.Instance.studentInfo.data._finance)).ToString() + " scholarships)";
     }
 }

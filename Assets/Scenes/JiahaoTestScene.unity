@@ -6301,9 +6301,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverInfoObjects:
+  - {fileID: 1650798676}
+  - {fileID: 80869442}
+  - {fileID: 841780132}
+  - {fileID: 1083764133}
   - {fileID: 1654924506}
   - {fileID: 1957492277}
-  - {fileID: 80869442}
   - {fileID: 2086318285}
   hoverInfoData: {fileID: 11400000, guid: 40196315389339f4c8f9dfa14a36e9bb, type: 2}
 --- !u!1 &284943720
@@ -21041,7 +21044,7 @@ MonoBehaviour:
   - {fileID: 6536854109879866706}
   - {fileID: 1205937187}
   - {fileID: 1350696869}
-  levelNumberToSet: 11
+  levelNumberToSet: 10
 --- !u!1001 &955882777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24078,7 +24081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b998159e51a18a43af06f2540072022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverText: StudentAcadmic
+  hoverText: The average academic of the school, you should keep it from being red
+    to pass the level.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: StudentAcademic
   offset: {x: 10, y: 80}
@@ -27863,6 +27867,7 @@ MonoBehaviour:
   scholarshipSlider: {fileID: 1218067755}
   minValue: 0
   maxValue: 100
+  financeText: {fileID: 1760162726}
 --- !u!1 &1212846682
 GameObject:
   m_ObjectHideFlags: 0
@@ -29404,7 +29409,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0cbfc558906c4c8f851a881afb2d3db, type: 2}
   - {fileID: 11400000, guid: cc8228f8e97994b6997fc8a29a1de265, type: 2}
   - {fileID: 11400000, guid: a9fcfda377c9d4338b6ae4cb40bc8763, type: 2}
-  currentLevelID: 11
+  currentLevelID: 10
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
@@ -32668,7 +32673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: 124}
+  m_AnchoredPosition: {x: -217, y: 130}
   m_SizeDelta: {x: 239.42, y: 82.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380431368
@@ -32726,7 +32731,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -34694,6 +34699,8 @@ MonoBehaviour:
   needScholarshipSlider: {fileID: 1937350698}
   meritScholarshipController: {fileID: 1209974164}
   isLegendary: 0
+  studentFinanceText: {fileID: 611207621}
+  studentAcademicText: {fileID: 2034146089}
   AImage: {fileID: 1750240101}
   BImage: {fileID: 729473017}
   CImage: {fileID: 721236675}
@@ -38711,6 +38718,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650798673}
+  - component: {fileID: 1650798676}
+  - component: {fileID: 1650798675}
+  - component: {fileID: 1650798674}
   m_Layer: 5
   m_Name: StudentLeftDisplay
   m_TagString: Untagged
@@ -38739,6 +38749,60 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000053617696, y: 160.25}
   m_SizeDelta: {x: 408, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1650798674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650798672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1650798675
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650798672}
+  m_CullTransparentMesh: 1
+--- !u!114 &1650798676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650798672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b998159e51a18a43af06f2540072022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverText: How many applicants still left in the application pool.
+  hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
+  hoverInfoID: StudentLeft
+  offset: {x: 10, y: 80}
 --- !u!224 &1651167273 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8407800237300784567, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
@@ -42501,8 +42565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 141, y: 124}
-  m_SizeDelta: {x: 239.42, y: 82.67}
+  m_AnchoredPosition: {x: 143, y: 136}
+  m_SizeDelta: {x: 420.34, y: 82.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760162725
 MonoBehaviour:
@@ -42511,7 +42575,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760162723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30d978f7733c14529bfc46fe6133415e, type: 3}
   m_Name: 
@@ -42565,7 +42629,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.7
+  m_fontSize: 56.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -42573,7 +42637,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -44672,6 +44736,7 @@ MonoBehaviour:
   - {fileID: 1924108831}
   - {fileID: 400293592}
   buttonOffsets:
+  - 0
   - 0
   - 0
   - 0

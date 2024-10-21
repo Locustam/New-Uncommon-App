@@ -133,7 +133,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     private void Start()
     {
-        financeRequired = financeDangerLine / studentRequired;
+        
         RandomlyPresentAStudent();
         UpdateAllVisuals();
     }

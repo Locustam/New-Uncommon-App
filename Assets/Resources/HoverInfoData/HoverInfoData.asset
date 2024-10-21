@@ -24,8 +24,11 @@ MonoBehaviour:
   - HoverInfoID: StudentFinance
     HoverText: The Finance of this student will be added to total finance if admitted.
   - HoverInfoID: StudentAcademic
-    HoverText: StudentAcadmic
+    HoverText: The average academic of the school, you should keep it from being
+      red to pass the level.
   - HoverInfoID: ScholarshipDisplay
     HoverText: If the student is with need base scholarship, you do not need to grant
       them scholarship. Otherwise, choose the amount of scholarship you want to grant
       them, and that will count as merit base scholarships.
+  - HoverInfoID: StudentLeft
+    HoverText: How many applicants still left in the application pool.

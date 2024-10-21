@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Level10
   m_EditorClassIdentifier: 
   academicMultiplier: 0.7
-  studentLeft: 35
+  studentLeft: 40
   studentRequired: 25
   initialScholarship: 700
   financeMax: 1000
-  financeDangerLine: 750
+  financeDangerLine: 500
   goodStudentPercentage: 9
   badStudentPercentage: 43
   richStudentPercentage: 13
-  poorStudentPercentage: 62
+  poorStudentPercentage: 38
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
   workplacePercentage: 0

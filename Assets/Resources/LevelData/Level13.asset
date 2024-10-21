@@ -20,8 +20,8 @@ MonoBehaviour:
   financeDangerLine: 750
   goodStudentPercentage: 9
   badStudentPercentage: 47
-  richStudentPercentage: 13
-  poorStudentPercentage: 66
+  richStudentPercentage: 65
+  poorStudentPercentage: 0
   extroversionPercentage: 42
   magicalPersonalityPercentage: 55
   workplacePercentage: 45
