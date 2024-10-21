@@ -16,8 +16,8 @@ MonoBehaviour:
   studentLeft: 20
   studentRequired: 20
   initialScholarship: 1500
-  financeMax: 2000
-  financeDangerLine: 700
+  financeMax: 1000
+  financeDangerLine: 750
   goodStudentPercentage: 5
   badStudentPercentage: 50
   richStudentPercentage: 9

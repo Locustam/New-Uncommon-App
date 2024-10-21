@@ -150,7 +150,7 @@ MonoBehaviour:
   m_HorizontalFit: 2
   m_VerticalFit: 2
   sizeMin: {x: 0, y: 0}
-  sizeMax: {x: 370, y: 1080}
+  sizeMax: {x: 500, y: 1080}
 --- !u!1 &828171549050180744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1934,7 @@ MonoBehaviour:
   m_HorizontalFit: 2
   m_VerticalFit: 2
   sizeMin: {x: 0, y: 0}
-  sizeMax: {x: 370, y: 100000}
+  sizeMax: {x: 500, y: 100000}
 --- !u!1 &7559237298198486019
 GameObject:
   m_ObjectHideFlags: 0

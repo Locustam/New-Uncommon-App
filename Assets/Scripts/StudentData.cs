@@ -80,5 +80,9 @@ public class StudentData
 
     //======================
 
+    //===========Student's Chance of Enrollment===============
 
+    public bool willEnroll;
+
+    //========================================================
 }

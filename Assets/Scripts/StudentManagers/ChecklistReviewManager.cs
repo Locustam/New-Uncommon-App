@@ -10,18 +10,27 @@ public class ChecklistReviewManager : MonoBehaviour
     // Start is called before the first frame update
     public bool ReviewChecklist(StudentData data)
     {
+
+        if (data._isAlumni == alumniToggle.isOn &&
+            data._isFirstGen == firstGenToggle.isOn)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+}
+
+    public bool CheckedAnything()
+    {
         if (alumniToggle.isOn || firstGenToggle.isOn)
         {
-            if (data._isAlumni == alumniToggle.isOn &&
-                data._isFirstGen == firstGenToggle.isOn)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
-        return true;
+        else
+        {
+            return false;
+        }
     }
 }

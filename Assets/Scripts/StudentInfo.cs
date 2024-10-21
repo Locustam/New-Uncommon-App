@@ -82,6 +82,15 @@ public class StudentInfo : MonoBehaviour
         studentNameText.text = data._studentName;
         financeSlider.value = data._finance;
         academicSlider.value = data._academic;
+
+        //setting dangerline for personal finance
+        SliderVisuals financeSliderVisuals = financeSlider.GetComponent<SliderVisuals>();
+        if(financeSliderVisuals != null)
+        {
+            //Danger line is the average finance needed per student
+            financeSliderVisuals.threshHolds[1] = StudentAdmissionManager.Instance.financeDangerLine / StudentAdmissionManager.Instance.studentRequired;
+        }
+
     }
 
     public void ScanStudent()

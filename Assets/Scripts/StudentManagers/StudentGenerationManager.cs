@@ -324,7 +324,8 @@ public class StudentGenerationManager : MonoBehaviour
         //============================
 
         //=======Personal Information======
-        //==booleans==
+        //==booleans====
+        #region
         //parent info
         string fatherFirstName = firstNames[Random.Range(0, firstNames.Count)];
         string motherFirstName = firstNames[Random.Range(0, firstNames.Count)];
@@ -332,7 +333,8 @@ public class StudentGenerationManager : MonoBehaviour
         data._fatherName = fatherFirstName + " " + data._lastName;
         data._motherName = motherFirstName + " " + motherLastName;
 
-        //first gen/ alumni
+        //====first gen/ alumni=====
+        #region
         data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
         if (data._isFirstGen)
         {
@@ -379,10 +381,11 @@ public class StudentGenerationManager : MonoBehaviour
                 }
 
             }
-
+            
 
         }
-
+        #endregion
+        //=================
 
         //patron 
         if (data._finance >= 90)
@@ -390,7 +393,7 @@ public class StudentGenerationManager : MonoBehaviour
             Debug.Log("this student is patron");
             data._isPatron = (Random.Range(0, 100) < patronPercentage);
         }
-
+        #endregion
         //==========
 
 
@@ -450,16 +453,14 @@ public class StudentGenerationManager : MonoBehaviour
         data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
         #endregion
         //=======
-
-
-
-
-
-
-
-
         //=================================
 
+
+        //==========Student's Chance of Enroll===============
+
+
+
+        //===================================================
 
         return data;
     }

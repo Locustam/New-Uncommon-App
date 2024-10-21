@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -200,12 +200,12 @@ public class StudentAdmissionManager : MonoBehaviour
         if (averageFinance <= financeDangerLine)
         {
             averageFinanceText.color = colorUrgent;
-            averageFinanceText.text = "<shake a = 2>" + averageFinance.ToString() + "</shake>";
+            averageFinanceText.text = "<shake a = 2>" + averageFinance.ToString() + "kɄ" + "</shake>";
         }
         else
         {
             averageFinanceText.color = colorSafe;
-            averageFinanceText.text = averageFinance.ToString();
+            averageFinanceText.text = averageFinance.ToString() + "kɄ";
         }
         if (averageAcademic <= academicDangerLine)
         {
@@ -234,7 +234,7 @@ public class StudentAdmissionManager : MonoBehaviour
         averageFinanceSlider.maxValue = financeMax;
         SliderVisuals financeSliderColor = averageFinanceSlider.GetComponent<SliderVisuals>();
         financeSliderColor.threshHolds[1] = financeDangerLine;//setting the color that displays red for finance
-        financeSliderColor.threshHolds[2] = financeDangerLine + (financeMax-financeDangerLine)/2; //setting the color that displays yellow
+        financeSliderColor.threshHolds[2] = financeMax-1; //setting the color that displays yellow
         financeSliderColor.UpdateSliderColor();
 
         averageAcademicSlider.value = averageAcademic;
@@ -265,6 +265,10 @@ public class StudentAdmissionManager : MonoBehaviour
             studentLeftText.color = colorSafe;
             studentLeftText.text = studentLeft.ToString();
         }
+
+
+        studentInfo.UpdateStudentInfo(studentInfo.data);
+        studentInfo.financeSlider.GetComponent<SliderVisuals>().UpdateSliderColor();
     }
     public void UpdateRejectVisuals()
     {
@@ -295,14 +299,21 @@ public class StudentAdmissionManager : MonoBehaviour
             if (CanAdmit(data)) 
             {
                 bool checklistPassed;
-                if(checklistReveiwManager.ReviewChecklist(data))
+                if (checklistReveiwManager.CheckedAnything())
                 {
-                    checklistPassed = true;
+                    if (checklistReveiwManager.ReviewChecklist(data))
+                    {
+                        checklistPassed = true;
+                    }
+                    else
+                    {
+                        checklistPassed = false;
+                        DecreasePlayerHealth(1);
+                    }
                 }
                 else
                 {
                     checklistPassed = false;
-                    DecreasePlayerHealth(1);
                 }
 
                 SoundManager.Instance.PlaySFX("Admit");
