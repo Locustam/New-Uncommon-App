@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;  // Import for UI components
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
@@ -8,27 +8,29 @@ public class Hoverinfo : MonoBehaviour
     public string hoverText;          // The text that will be displayed
     public GameObject hoverPrefab;    // The prefab to instantiate
     public string hoverInfoID;        // Unique ID for the hover info (optional)
+    public float hoverDelay = 1.0f;   // Time in seconds required to hover before showing the hover UI
 
     private GameObject hoverUI;       // Reference to the instantiated hover UI
     private Canvas canvas;            // Canvas for proper positioning
     private RectTransform canvasRectTransform;
 
     private bool isHovering = false;  // Track whether the mouse is hovering
+    private float hoverTimer = 0f;    // Timer to track hover time
     public Vector2 offset = new Vector2(10, -10); // Offset to avoid blocking original UI element
 
     void Start()
     {
-
-
         // Find the canvas in the scene (assuming the hover UI will be on the same canvas as other UI elements)
         canvas = FindObjectOfType<Canvas>();
         canvasRectTransform = canvas.GetComponent<RectTransform>();
     }
+
     private void OnValidate()
     {
         // Check for Image component and generate one if it doesn't exist
         EnsureImageComponent();
     }
+
     void Update()
     {
         PerformHoverDetection();
@@ -74,16 +76,25 @@ public class Hoverinfo : MonoBehaviour
             }
         }
 
-        // Handle the hover state
-        if (isMouseOver && !isHovering)
+        // Handle hover state with delay
+        if (isMouseOver)
         {
-            isHovering = true;
-            CreateHoverUI();
+            hoverTimer += Time.deltaTime;
+
+            if (hoverTimer >= hoverDelay && !isHovering)
+            {
+                isHovering = true;
+                CreateHoverUI();
+            }
         }
-        else if (!isMouseOver && isHovering)
+        else
         {
-            isHovering = false;
-            Destroy(hoverUI);
+            hoverTimer = 0f;  // Reset timer when mouse is not hovering
+            if (isHovering)
+            {
+                isHovering = false;
+                Destroy(hoverUI);
+            }
         }
     }
 
@@ -128,7 +139,16 @@ public class Hoverinfo : MonoBehaviour
 
         // Convert the world position to the canvas's local position
         Vector2 localPoint;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTransform, RectTransformUtility.WorldToScreenPoint(null, worldPosition), canvas.worldCamera, out localPoint);
+
+        // Make sure we are passing the correct camera for non-Overlay canvases
+        Camera currentCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRectTransform,
+            RectTransformUtility.WorldToScreenPoint(currentCamera, worldPosition),
+            currentCamera,
+            out localPoint
+        );
 
         // Apply the offset and set the local position of the hover UI
         localPoint += offset;

@@ -2042,7 +2042,8 @@ MonoBehaviour:
   hoverText: Spend scholarship by admitting student whose finance is below the requirement.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: TotalScholarship
-  offset: {x: 10, y: 80}
+  hoverDelay: 0.1
+  offset: {x: 80, y: -10}
 --- !u!114 &80869443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,7 +2064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6301,14 +6302,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverInfoObjects:
-  - {fileID: 1650798676}
   - {fileID: 80869442}
   - {fileID: 841780132}
   - {fileID: 1083764133}
+  - {fileID: 1650798676}
   - {fileID: 1654924506}
   - {fileID: 1957492277}
   - {fileID: 2086318285}
   hoverInfoData: {fileID: 11400000, guid: 40196315389339f4c8f9dfa14a36e9bb, type: 2}
+  backgroundSprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
+  hoverInfoPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
+  hoverDelay: 0.1
+  hoverOffsetX: 80
+  hoverOffsetY: -10
 --- !u!1 &284943720
 GameObject:
   m_ObjectHideFlags: 0
@@ -19132,7 +19138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19157,6 +19163,7 @@ MonoBehaviour:
   hoverText: The Finance of this student will be added to total finance if admitted.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: StudentFinance
+  hoverDelay: 0.4
   offset: {x: 10, y: 80}
 --- !u!222 &841780133
 CanvasRenderer:
@@ -24051,7 +24058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24085,7 +24092,8 @@ MonoBehaviour:
     to pass the level.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: StudentAcademic
-  offset: {x: 10, y: 80}
+  hoverDelay: 0.1
+  offset: {x: 80, y: -10}
 --- !u!1 &1084460018
 GameObject:
   m_ObjectHideFlags: 0
@@ -38769,7 +38777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38802,7 +38810,8 @@ MonoBehaviour:
   hoverText: How many applicants still left in the application pool.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: StudentLeft
-  offset: {x: 10, y: 80}
+  hoverDelay: 0.1
+  offset: {x: 80, y: -10}
 --- !u!224 &1651167273 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8407800237300784567, guid: c4fd801a5eafaac4eacbe39ce7685899, type: 3}
@@ -38878,7 +38887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38905,7 +38914,8 @@ MonoBehaviour:
     them, and that will count as merit base scholarships.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: ScholarshipDisplay
-  offset: {x: 10, y: 80}
+  hoverDelay: 0.1
+  offset: {x: 80, y: -10}
 --- !u!222 &1654924507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41126,6 +41136,7 @@ MonoBehaviour:
     improve your personal rating.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: TotalFinance
+  hoverDelay: 1
   offset: {x: 10, y: 80}
 --- !u!114 &1731171234
 MonoBehaviour:
@@ -46729,7 +46740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -46762,7 +46773,8 @@ MonoBehaviour:
   hoverText: This is the average academic of the student you admitted
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: TotalAcademic
-  offset: {x: 10, y: 80}
+  hoverDelay: 0.1
+  offset: {x: 80, y: -10}
 --- !u!1 &1957792774
 GameObject:
   m_ObjectHideFlags: 0
@@ -48709,7 +48721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6f30868596120d446b743519442d248c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48743,7 +48755,8 @@ MonoBehaviour:
     improve your personal rating.
   hoverPrefab: {fileID: 8525579257894242142, guid: d841df78cf546c24bbbba575b833ed19, type: 3}
   hoverInfoID: TotalFinance
-  offset: {x: 10, y: 80}
+  hoverDelay: 0.1
+  offset: {x: 80, y: -10}
 --- !u!1 &2087068430
 GameObject:
   m_ObjectHideFlags: 0

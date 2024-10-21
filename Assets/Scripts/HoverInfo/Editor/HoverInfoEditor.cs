@@ -23,5 +23,11 @@ public class HoverInfoManagerEditor : Editor
         {
             manager.UpdateHoverInfoTexts();
         }
+
+        // Add a button for updating all hover info components' variables
+        if (GUILayout.Button("Update HoverInfo Components"))
+        {
+            manager.UpdateHoverInfoComponents();
+        }
     }
 }
