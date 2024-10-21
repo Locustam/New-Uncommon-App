@@ -5,6 +5,9 @@ public class SliderCopy : MonoBehaviour
 {
     public Slider targetSlider;  // Reference to the target slider to copy from
     private Slider ownSlider;    // The slider component on this GameObject
+    private Image targetFillImage;  // The fill image of the target slider
+    private Image ownFillImage;     // The fill image of the own slider
+    public bool CopyColor;
 
     void Start()
     {
@@ -22,16 +25,33 @@ public class SliderCopy : MonoBehaviour
             return;
         }
 
+        // Get the fill images from both sliders
+        targetFillImage = targetSlider.fillRect.GetComponent<Image>();
+        ownFillImage = ownSlider.fillRect.GetComponent<Image>();
+
+        if (targetFillImage == null || ownFillImage == null)
+        {
+            Debug.LogError("Fill Image not found on one of the sliders!");
+            return;
+        }
+
         // Copy initial properties from the target slider to this slider
         InitializeSliderProperties();
     }
 
     void Update()
     {
-        // Continuously update only the value to keep them in sync
+        // Continuously update the value and maxValue to keep them in sync
         if (ownSlider != null && targetSlider != null)
         {
             ownSlider.value = targetSlider.value;
+            ownSlider.maxValue = targetSlider.maxValue;
+
+            // Continuously copy the color of the target fill
+            if (CopyColor)
+            {
+                ownFillImage.color = targetFillImage.color;
+            }
         }
     }
 
@@ -40,7 +60,12 @@ public class SliderCopy : MonoBehaviour
         ownSlider.minValue = targetSlider.minValue;
         ownSlider.maxValue = targetSlider.maxValue;
         ownSlider.wholeNumbers = targetSlider.wholeNumbers;
-        // Initialize other properties as necessary
+
+        if (CopyColor)
+        {
+            // Copy the fill color initially
+            ownFillImage.color = targetFillImage.color;
+        }
     }
 
     // Optionally add a method to update all properties manually if needed

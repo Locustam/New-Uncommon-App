@@ -25,3 +25,7 @@ MonoBehaviour:
     HoverText: The Finance of this student will be added to total finance if admitted.
   - HoverInfoID: StudentAcademic
     HoverText: StudentAcadmic
+  - HoverInfoID: ScholarshipDisplay
+    HoverText: If the student is with need base scholarship, you do not need to grant
+      them scholarship. Otherwise, choose the amount of scholarship you want to grant
+      them, and that will count as merit base scholarships.

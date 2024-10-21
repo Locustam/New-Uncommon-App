@@ -18,6 +18,9 @@ public class StudentData
     //====General Info=====
     public int _academic;
     public int _finance;
+    public int _scholarshipNeeded;
+    public bool _isNeedScholarship;
+    public int _financeWithScholarship;
 
     //=====================
 

@@ -45,8 +45,12 @@ public class LevelManager : MonoBehaviour
         admitManager.studentRequired = levelData.studentRequired;
         admitManager.initialScholarship = levelData.initialScholarship;
         admitManager.totalScholarship = levelData.initialScholarship;
+
         admitManager.financeMax = levelData.financeMax;
         admitManager.financeDangerLine = levelData.financeDangerLine;
+        admitManager.financeRequired = admitManager.financeDangerLine / admitManager.studentRequired;
+
+
         admitManager.UpdateAllVisuals();
          
 

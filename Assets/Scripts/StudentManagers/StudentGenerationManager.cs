@@ -290,7 +290,17 @@ public class StudentGenerationManager : MonoBehaviour
 
         //===Finance and academic====
         #region
-        data._finance = Random.Range(0, 100);
+        //data._finance = Random.Range(0, StudentAdmissionManager.Instance.academicDangerLine);
+
+        data._scholarshipNeeded = Mathf.Max(StudentAdmissionManager.Instance.financeRequired - data._finance);
+        if (data._nationality == "Umeiia" || data._nationality == "Nystal")
+        {
+            data._isNeedScholarship = true;
+        }
+        else
+        {
+            data._isNeedScholarship= false;
+        }
         data._academic = Random.Range(0, 100);
 
         
@@ -306,16 +316,27 @@ public class StudentGenerationManager : MonoBehaviour
         }
 
         int f = Random.Range(0, 100);
-        if (f < Mathf.Min(richStudentPercentage,100))
+        //if (f < Mathf.Min(richStudentPercentage,100))
+        //{
+        //    data._finance = Random.Range(100, 100);
+        //}
+        //else if (f < Mathf.Min(poorStudentPercentage + richStudentPercentage,100))
+        //{
+        //    data._finance = Random.Range(0, 20);
+        //}
+
+        if(f > 50 + richStudentPercentage - poorStudentPercentage)
         {
-            data._finance = Random.Range(100, 100);
+            data._finance = Random.Range(0, StudentAdmissionManager.Instance.financeRequired);
+
         }
-        else if (f < Mathf.Min(poorStudentPercentage + richStudentPercentage,100))
+        else
         {
-            data._finance = Random.Range(0, 20);
+            data._finance = StudentAdmissionManager.Instance.financeRequired;
+
         }
 
-        if(LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect)
+        if (LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect)
         {
             data._finance = Mathf.Max(0,data._finance - 20);
             data._academic = Mathf.Min(100, data._academic + 40);

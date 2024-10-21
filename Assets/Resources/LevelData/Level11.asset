@@ -21,7 +21,7 @@ MonoBehaviour:
   goodStudentPercentage: 9
   badStudentPercentage: 47
   richStudentPercentage: 13
-  poorStudentPercentage: 66
+  poorStudentPercentage: 15
   extroversionPercentage: 54
   magicalPersonalityPercentage: 35
   workplacePercentage: 25

@@ -73,7 +73,7 @@ public class StudentAdmissionManager : MonoBehaviour
     [Header("   ")]
     public int studentAdmitted = 0;
 
-    public int financeRequired = 100;
+    public int financeRequired;
 
     //=====Main Variables======
     
@@ -86,6 +86,7 @@ public class StudentAdmissionManager : MonoBehaviour
     [Header("Total Finance(averageFinance)")]
     //public int financeMidValue = 50;//no longer useful for new finance system
     public int averageFinance = 0;
+    public int netAverageFinance = 0;
     public int financeMax;
     
 
@@ -132,6 +133,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     private void Start()
     {
+        financeRequired = financeDangerLine / studentRequired;
         RandomlyPresentAStudent();
         UpdateAllVisuals();
     }
@@ -234,7 +236,7 @@ public class StudentAdmissionManager : MonoBehaviour
         averageFinanceSlider.maxValue = financeMax;
         SliderVisuals financeSliderColor = averageFinanceSlider.GetComponent<SliderVisuals>();
         financeSliderColor.threshHolds[1] = financeDangerLine;//setting the color that displays red for finance
-        financeSliderColor.threshHolds[2] = financeMax-1; //setting the color that displays yellow
+        financeSliderColor.threshHolds[2] = financeDangerLine; //setting the color that displays yellow
         financeSliderColor.UpdateSliderColor();
 
         averageAcademicSlider.value = averageAcademic;
@@ -267,7 +269,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
 
 
-        studentInfo.UpdateStudentInfo(studentInfo.data);
+        //studentInfo.UpdateStudentInfo(studentInfo.data);
         studentInfo.financeSlider.GetComponent<SliderVisuals>().UpdateSliderColor();
     }
     public void UpdateRejectVisuals()
@@ -340,11 +342,11 @@ public class StudentAdmissionManager : MonoBehaviour
                         Mathf.RoundToInt(scholarshipCost * 1.3f);
 
                     }
-                    totalScholarship -= scholarshipCost;
-                    if (totalScholarship < 0)
-                    {
-                        totalScholarship = 0;
-                    }
+                    //totalScholarship -= scholarshipCost;
+                    //if (totalScholarship < 0)
+                    //{
+                    //    totalScholarship = 0;
+                    //}
 
                     if (data._isPatron)
                     {
@@ -361,7 +363,26 @@ public class StudentAdmissionManager : MonoBehaviour
 
                     //averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier); //Old Finance Calc
                     //New finance calc
-                    averageFinance += data._finance;
+                    if (data._isNeedScholarship)
+                    {
+                        averageFinance += financeRequired;
+                        netAverageFinance += data._finance;
+                    }
+                    else if(data._financeWithScholarship > data._finance)
+                    {
+                        totalScholarship -= (data._financeWithScholarship - data._finance);
+                        netAverageFinance += data._financeWithScholarship;
+                        averageFinance += data._financeWithScholarship;
+                    }else
+                    {
+                        averageFinance += data._finance;
+                        netAverageFinance += data._finance;
+                    }
+                    
+
+
+                    
+                    
 
                     averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
                     
