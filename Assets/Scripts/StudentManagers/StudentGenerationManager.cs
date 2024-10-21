@@ -374,14 +374,14 @@ public class StudentGenerationManager : MonoBehaviour
                 if (fatherHasUniversityDegree)
                 {
                     // Father gets a university degree
-                    data._fatherEducation = Random.value < 0.5f ? "Uncommon University" : collegeNames[Random.Range(0, collegeNames.Count)];
+                    data._fatherEducation = "Uncommon University";
                     // Mother has a 50% chance of either college or non-college name
                     data._motherEducation = Random.value < 0.5f ? collegeNames[Random.Range(0, collegeNames.Count)] : nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
                 }
                 else
                 {
                     // Mother gets a university degree
-                    data._motherEducation = Random.value < 0.5f ? "Uncommon University" : collegeNames[Random.Range(0, collegeNames.Count)];
+                    data._motherEducation = "Uncommon University";
                     // Father has a 50% chance of either college or non-college name
                     data._fatherEducation = Random.value < 0.5f ? collegeNames[Random.Range(0, collegeNames.Count)] : nonCollegeNames[Random.Range(0, nonCollegeNames.Count)];
                 }

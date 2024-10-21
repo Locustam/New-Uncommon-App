@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour
 
         admitManager.financeMax = levelData.financeMax;
         admitManager.financeDangerLine = levelData.financeDangerLine;
-        admitManager.financeRequired = admitManager.financeDangerLine / admitManager.studentRequired;
+        admitManager.financeRequired = Mathf.RoundToInt((admitManager.financeDangerLine / admitManager.studentRequired)*1.3f);
 
 
         admitManager.UpdateAllVisuals();

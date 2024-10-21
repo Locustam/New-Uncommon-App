@@ -21044,7 +21044,7 @@ MonoBehaviour:
   - {fileID: 6536854109879866706}
   - {fileID: 1205937187}
   - {fileID: 1350696869}
-  levelNumberToSet: 10
+  levelNumberToSet: 11
 --- !u!1001 &955882777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29409,7 +29409,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0cbfc558906c4c8f851a881afb2d3db, type: 2}
   - {fileID: 11400000, guid: cc8228f8e97994b6997fc8a29a1de265, type: 2}
   - {fileID: 11400000, guid: a9fcfda377c9d4338b6ae4cb40bc8763, type: 2}
-  currentLevelID: 10
+  currentLevelID: 11
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
@@ -51713,7 +51713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alumni
+  m_text: Legacy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}

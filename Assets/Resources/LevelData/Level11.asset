@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Level11
   m_EditorClassIdentifier: 
   academicMultiplier: 0.9
-  studentLeft: 35
+  studentLeft: 30
   studentRequired: 25
-  initialScholarship: 700
+  initialScholarship: 150
   financeMax: 1000
-  financeDangerLine: 750
+  financeDangerLine: 650
   goodStudentPercentage: 9
-  badStudentPercentage: 53
+  badStudentPercentage: 35
   richStudentPercentage: 10
   poorStudentPercentage: 0
   extroversionPercentage: 54
@@ -29,12 +29,12 @@ MonoBehaviour:
   explorativityPercentage: 53
   psionicAffinityPercentage: 55
   verteranPercentage: 35
-  alumniPercentage: 43
+  alumniPercentage: 76
   patronPercentage: 58
-  firstGenPercentage: 63
+  firstGenPercentage: 33
   stateSponsoredPercentage: 49
   miniGoalPool:
-  - goal: calm
+  - goal: 1st-gen
     requiredNum: 5
   - goal: legacy
     requiredNum: 5
