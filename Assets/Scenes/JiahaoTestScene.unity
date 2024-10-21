@@ -20428,7 +20428,7 @@ MonoBehaviour:
   - {fileID: 6536854109879866706}
   - {fileID: 1205937187}
   - {fileID: 1350696869}
-  levelNumberToSet: 10
+  levelNumberToSet: 11
 --- !u!1001 &955882777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28268,7 +28268,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0cbfc558906c4c8f851a881afb2d3db, type: 2}
   - {fileID: 11400000, guid: cc8228f8e97994b6997fc8a29a1de265, type: 2}
   - {fileID: 11400000, guid: a9fcfda377c9d4338b6ae4cb40bc8763, type: 2}
-  currentLevelID: 10
+  currentLevelID: 11
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
@@ -30368,6 +30368,11 @@ Transform:
   - {fileID: 1235377804}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1350630740 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5495722372089276910, guid: e4952cf2cf076324d854e3fec4433dc9, type: 3}
+  m_PrefabInstance: {fileID: 9185576234686706295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350696869
 GameObject:
   m_ObjectHideFlags: 0
@@ -40538,7 +40543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messagePrefab: {fileID: 2198018297549969624, guid: 607c1f6fe41ec4707891e9a3455f7984, type: 3}
-  messageParent: {fileID: 0}
+  messageParent: {fileID: 1350630740}
   newChatIcon: {fileID: 677700590}
 --- !u!1 &1771134278
 GameObject:
