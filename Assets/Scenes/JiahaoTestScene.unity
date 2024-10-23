@@ -14269,8 +14269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7242e0f8d9978408b83534aa35597154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSlider: {fileID: 1218067755}
-  CopyColor: 1
+  targetSlider: {fileID: 497859977}
+  CopyColor: 0
 --- !u!114 &567567846
 MonoBehaviour:
   m_ObjectHideFlags: 0
