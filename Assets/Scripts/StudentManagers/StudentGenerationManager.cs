@@ -290,12 +290,13 @@ public class StudentGenerationManager : MonoBehaviour
 
         //===Finance and academic====
         #region
-        //data._finance = Random.Range(0, StudentAdmissionManager.Instance.academicDangerLine);
 
         data._scholarshipNeeded = Mathf.Max(StudentAdmissionManager.Instance.financeRequired - data._finance);
         if (data._nationality == "Umeiia" || data._nationality == "Nystal")
         {
             data._isNeedScholarship = true;
+            data._financeWithScholarship = StudentAdmissionManager.Instance.financeRequired;
+            Debug.Log("2isneed " + data._isNeedScholarship);
         }
         else
         {
@@ -341,6 +342,11 @@ public class StudentGenerationManager : MonoBehaviour
             data._finance = Mathf.Max(0,data._finance - 20);
             data._academic = Mathf.Min(100, data._academic + 40);
         }
+
+        if (data._financeWithScholarship == 0)
+        {
+            data._financeWithScholarship = data._finance;
+        }
         #endregion
         //============================
 
@@ -353,7 +359,7 @@ public class StudentGenerationManager : MonoBehaviour
         string motherLastName = lastNames[Random.Range(0, lastNames.Count)];
         data._fatherName = fatherFirstName + " " + data._lastName;
         data._motherName = motherFirstName + " " + motherLastName;
-
+        Debug.Log("3isneed " + data._isNeedScholarship);
         //====first gen/ alumni=====
         #region
         data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
@@ -402,8 +408,8 @@ public class StudentGenerationManager : MonoBehaviour
                 }
 
             }
-            
 
+         
         }
         #endregion
         //=================
@@ -482,7 +488,7 @@ public class StudentGenerationManager : MonoBehaviour
 
 
         //===================================================
-
+        Debug.Log("1isneed " + data._isNeedScholarship);
         return data;
     }
 

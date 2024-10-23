@@ -116,7 +116,9 @@ public class StudentInfo : MonoBehaviour
         }
 
         studentAcademicText.text = data._academic.ToString();
-        studentFinanceText.text = data._finance.ToString();
+        //studentFinanceText.text = data._finance.ToString();
+        studentFinanceText.text = data._financeWithScholarship.ToString() + "(" + data._finance.ToString()+ " + " + ( data._financeWithScholarship - data._finance).ToString() + ")";
+
 
         meritScholarshipController.minValue = data._finance;
         meritScholarshipController.maxValue = StudentAdmissionManager.Instance.financeRequired;
