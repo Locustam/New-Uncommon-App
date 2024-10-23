@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
 
+    public bool LoadPlayerPref;
+
 
     
 
@@ -61,7 +63,10 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-            LoadCurrentLevelID(); // Load the current level ID
+            if (LoadPlayerPref)
+            {
+                LoadCurrentLevelID(); // Load the current level ID
+            }
             currentLevelManager = GameObject.FindGameObjectWithTag("levelManager").GetComponent<LevelManager>();
             if (currentLevelID < levelDataList.Count)
             {
