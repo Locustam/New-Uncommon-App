@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,15 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] gameTabs;
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
-    [SerializeField] Animator chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
+    [SerializeField] Animator appScreenAnimator, chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
     [SerializeField] GameObject creditScreen;
     [SerializeField] TextMeshProUGUI dayText;
-
+    GameObject screenOnTop;
     public int playerMaxHealth;
     public int playerHealth;
 
-    private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
+    private bool appScreenOpen = true, chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
     public LevelManager currentLevelManager;
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
@@ -166,27 +167,133 @@ public class GameManager : MonoBehaviour
             go.SetActive(go == tab);
         }
     }
+    // the toggles are not beautiful enough, very easy to make mistake and miss changing variables while copying
+    #region Toggles 
+
+    public void ToggleAppScreen()
+    {
+        screenOnTop = appScreenAnimator.gameObject;
+        if (!appScreenOpen)
+        {
+            appScreenAnimator.SetBool("Expand", appScreenOpen = !appScreenOpen);
+            BringWindowToFront(screenOnTop);
+        }
+        else
+        {
+            if (IsOnTop())
+            {
+                appScreenAnimator.SetBool("Expand", appScreenOpen = !appScreenOpen);
+                Transform parent = appScreenAnimator.gameObject.transform.parent;
+                int currentIndex = appScreenAnimator.gameObject.transform.GetSiblingIndex();
+
+                if (currentIndex > 0)
+                {
+                    // Get the window directly below (next sibling)
+                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
+                    BringWindowToFront(nextWindow); // Bring the next window to the front
+                }
+            }
+            else
+            {
+                BringWindowToFront(screenOnTop);
+            }
+        }
+        SoundManager.Instance.PlaySFX(appScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
+    }
 
     public void ToggleChatScreen()
     {
-        chatScreenAnimator.SetBool("Expand", chatScreenOpen = !chatScreenOpen);
+        screenOnTop = chatScreenAnimator.gameObject;
+        if (!chatScreenOpen)
+        {
+            chatScreenAnimator.SetBool("Expand", chatScreenOpen = !chatScreenOpen);
+            BringWindowToFront(screenOnTop);
+        }
+        else
+        {
+            if (IsOnTop())
+            {
+                chatScreenAnimator.SetBool("Expand", chatScreenOpen = !chatScreenOpen);
+                Transform parent = chatScreenAnimator.gameObject.transform.parent;
+                int currentIndex = chatScreenAnimator.gameObject.transform.GetSiblingIndex();
+
+                if (currentIndex > 0)
+                {
+                    // Get the window directly below (next sibling)
+                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
+                    BringWindowToFront(nextWindow); // Bring the next window to the front
+                }
+            }
+            else
+            {
+                BringWindowToFront(screenOnTop);
+            }
+        }
         SoundManager.Instance.PlaySFX(chatScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
     public void ToggleMapScreen()
     {
-        mapScreenAnimator.SetBool("Expand", mapScreenOpen = !mapScreenOpen);
+
+         screenOnTop = mapScreenAnimator.gameObject;
+        if(!mapScreenOpen)
+        {
+            mapScreenAnimator.SetBool("Expand", mapScreenOpen = !mapScreenOpen);
+            BringWindowToFront(screenOnTop);
+        }
+        else
+        {
+            if (IsOnTop())
+            {
+                mapScreenAnimator.SetBool("Expand", mapScreenOpen = !mapScreenOpen);
+                Transform parent = mapScreenAnimator.gameObject.transform.parent;
+                int currentIndex = mapScreenAnimator.gameObject.transform.GetSiblingIndex();
+
+                if (currentIndex > 0)
+                {
+                    // Get the window directly below (next sibling)
+                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
+                    BringWindowToFront(nextWindow); // Bring the next window to the front
+                }
+            }
+            else
+            {
+                BringWindowToFront(screenOnTop);
+            }
+        }
         SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
-    
 
-    public void ToggleLegendaryStudentPanel()
+    public void ToggleLegendaryStudentPanel() //unconventional naming & referencsing scheme
     {
-        //legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
-        legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
-        //legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
-        SoundManager.Instance.PlaySFX(legendaryStudentPanelOpen? "Click_ChatOpen" : "Click_ChatClose");
+        screenOnTop = legendaryStudentPanel;
+        if (!legendaryStudentPanelOpen)
+        {
+            legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
+            BringWindowToFront(screenOnTop);
+        }
+        else
+        {
+            if (IsOnTop())
+            {
+                legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
+                Transform parent = legendaryStudentPanel.transform.parent;
+                int currentIndex = legendaryStudentPanel.transform.GetSiblingIndex();
+
+                if (currentIndex > 0)
+                {
+                    // Get the window directly below (next sibling)
+                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
+                    BringWindowToFront(nextWindow); // Bring the next window to the front
+                }
+            }
+            else
+            {
+                BringWindowToFront(screenOnTop);
+            }
+        }
+        SoundManager.Instance.PlaySFX(legendaryStudentPanelOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
     public void ToggleCreditScreen()
@@ -195,7 +302,16 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlaySFX(creditScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
+    public void BringWindowToFront(GameObject window)
+    {
+        // Move the window to the last child in the parent (top of the hierarchy)
+        window.transform.SetAsLastSibling();
+    }
 
-        
-    
+    private bool IsOnTop()
+    {
+        return screenOnTop.transform.GetSiblingIndex() == screenOnTop.transform.parent.childCount - 1;
+    }
+
+    #endregion
 }

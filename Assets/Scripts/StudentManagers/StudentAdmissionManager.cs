@@ -202,12 +202,12 @@ public class StudentAdmissionManager : MonoBehaviour
         if (averageFinance <= financeDangerLine)
         {
             averageFinanceText.color = colorUrgent;
-            averageFinanceText.text = "<shake a = 2>" + averageFinance.ToString() + "kɄ" + "</shake>";
+            averageFinanceText.text = "<shake a = 2>" + averageFinance.ToString() + "kU" + "</shake>";
         }
         else
         {
             averageFinanceText.color = colorSafe;
-            averageFinanceText.text = averageFinance.ToString() + "kɄ";
+            averageFinanceText.text = averageFinance.ToString() + "kU";
         }
         if (averageAcademic <= academicDangerLine)
         {
