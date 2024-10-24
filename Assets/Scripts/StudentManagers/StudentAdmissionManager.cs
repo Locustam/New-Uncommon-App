@@ -140,9 +140,6 @@ public class StudentAdmissionManager : MonoBehaviour
 
     private void Update()
     {
-        
-        
-
         //==============Win/Lose check===============
         #region
         //jh this is a check of end game, it is a series of condtionals

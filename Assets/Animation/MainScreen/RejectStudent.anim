@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -63,7 +63,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -88,7 +88,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
   m_PositionCurves: []
   m_ScaleCurves:
   - curve:
@@ -133,7 +133,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -176,7 +176,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -219,7 +219,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -271,7 +271,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainScreenApplication/Canvas/MainScreenParent/Background
+    path: Canvas/MainScreenParent/Background
   m_FloatCurves:
   - serializedVersion: 2
     curve:
@@ -317,7 +317,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -365,7 +365,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -413,7 +413,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -461,7 +461,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -509,7 +509,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -548,7 +548,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -596,7 +596,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -644,7 +644,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -692,7 +692,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -740,7 +740,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -788,7 +788,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -836,7 +836,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -884,7 +884,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -932,7 +932,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -980,7 +980,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -993,7 +993,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -1002,7 +1002,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -1011,7 +1011,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -1020,7 +1020,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -1029,7 +1029,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -1038,7 +1038,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -1047,7 +1047,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1631643686
+      path: 1442818852
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -1056,7 +1056,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 1460864421
       script: {fileID: 0}
       typeID: 224
@@ -1065,7 +1065,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 2537237887
       script: {fileID: 0}
       typeID: 224
@@ -1074,7 +1074,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 3762036201
       script: {fileID: 0}
       typeID: 224
@@ -1083,7 +1083,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 2033536083
       script: {fileID: 0}
       typeID: 224
@@ -1092,7 +1092,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1398815498
+      path: 1692071856
       attribute: 538195251
       script: {fileID: 0}
       typeID: 224
@@ -1101,7 +1101,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 1460864421
       script: {fileID: 0}
       typeID: 224
@@ -1110,7 +1110,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 2537237887
       script: {fileID: 0}
       typeID: 224
@@ -1119,7 +1119,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 3762036201
       script: {fileID: 0}
       typeID: 224
@@ -1128,7 +1128,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 2033536083
       script: {fileID: 0}
       typeID: 224
@@ -1137,7 +1137,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1745106824
+      path: 3962998441
       attribute: 538195251
       script: {fileID: 0}
       typeID: 224
@@ -1146,7 +1146,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 2537237887
       script: {fileID: 0}
       typeID: 224
@@ -1155,7 +1155,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 3762036201
       script: {fileID: 0}
       typeID: 224
@@ -1164,7 +1164,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 2033536083
       script: {fileID: 0}
       typeID: 224
@@ -1173,7 +1173,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 538195251
       script: {fileID: 0}
       typeID: 224
@@ -1182,7 +1182,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 768956962
+      path: 3918148096
       attribute: 1460864421
       script: {fileID: 0}
       typeID: 224
@@ -1256,7 +1256,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1304,7 +1304,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1352,7 +1352,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1400,7 +1400,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1448,7 +1448,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1496,7 +1496,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1544,7 +1544,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1592,7 +1592,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1622,7 +1622,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -1652,7 +1652,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -1682,7 +1682,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -1730,7 +1730,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1778,7 +1778,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1826,7 +1826,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1865,7 +1865,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1913,7 +1913,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -1961,7 +1961,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2009,7 +2009,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2057,7 +2057,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2087,7 +2087,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -2117,7 +2117,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -2147,7 +2147,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -2195,7 +2195,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2243,7 +2243,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2291,7 +2291,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2339,7 +2339,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2387,7 +2387,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2435,7 +2435,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2483,7 +2483,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2531,7 +2531,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2561,7 +2561,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -2591,7 +2591,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -2621,7 +2621,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 16
@@ -2678,7 +2678,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background
+    path: Canvas/MainScreenParent/Background
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2735,7 +2735,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background
+    path: Canvas/MainScreenParent/Background
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2792,7 +2792,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background
+    path: Canvas/MainScreenParent/Background
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2805,7 +2805,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2817,7 +2817,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2829,7 +2829,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2841,7 +2841,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2853,7 +2853,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2865,7 +2865,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Preferences
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/PersonalInfo/Booleans
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2877,7 +2877,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2889,7 +2889,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -2901,7 +2901,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: MainScreenApplication/Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
+    path: Canvas/MainScreenParent/Background/MainWindow/ReviewViewCurrent/OverViewContent/StudentInfo
     classID: 224
     script: {fileID: 0}
     flags: 0

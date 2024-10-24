@@ -34,7 +34,7 @@ public class MeritScholarshipController : MonoBehaviour
     // Adds value to the slider while clamping to the max value and ensuring it doesn't go below the min value
     public void AddValue(float amount)
     {
-        if (scholarshipSlider == null || StudentAdmissionManager.Instance.studentInfo.data._isNeedScholarship) return;
+        if (scholarshipSlider == null) return;
         if (StudentAdmissionManager.Instance.totalScholarship >= scholarshipSlider.value + amount - minValue)
         {
             float newValue = Mathf.Clamp(scholarshipSlider.value + amount, minValue, maxValue);
@@ -46,9 +46,9 @@ public class MeritScholarshipController : MonoBehaviour
     }
 
     // Removes value from the slider while ensuring it doesn't go below the min value
-    public void RemoveValue(float amount )
+    public void RemoveValue(float amount)
     {
-        if (scholarshipSlider == null || StudentAdmissionManager.Instance.studentInfo.data._isNeedScholarship) return;
+        if (scholarshipSlider == null) return;
 
         float newValue = Mathf.Clamp(scholarshipSlider.value - amount, minValue, maxValue);
         scholarshipSlider.value = Mathf.Clamp(newValue, minValue, maxValue);
