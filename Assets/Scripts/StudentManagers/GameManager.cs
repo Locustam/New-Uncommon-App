@@ -17,15 +17,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] gameTabs;
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
-    [SerializeField] Animator appScreenAnimator, chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
+    [SerializeField] Animator mainScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
     [SerializeField] GameObject creditScreen;
     [SerializeField] TextMeshProUGUI dayText;
-    GameObject screenOnTop;
+
+    public List<Animator> windowAnimators;
+    public List<Canvas> windowCanvases;
+    private int currentOpenWindow = -1;
+    private int sortingLayerBase = 10;
+    [SerializeField] private float windowToggleWait = 0.1f;
+
     public int playerMaxHealth;
     public int playerHealth;
 
-    private bool appScreenOpen = true, chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
+    private bool creditScreenOpen = false;
     public LevelManager currentLevelManager;
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
@@ -170,131 +176,6 @@ public class GameManager : MonoBehaviour
     // the toggles are not beautiful enough, very easy to make mistake and miss changing variables while copying
     #region Toggles 
 
-    public void ToggleAppScreen()
-    {
-        screenOnTop = appScreenAnimator.gameObject;
-        if (!appScreenOpen)
-        {
-            appScreenAnimator.SetBool("Expand", appScreenOpen = !appScreenOpen);
-            BringWindowToFront(screenOnTop);
-        }
-        else
-        {
-            if (IsOnTop())
-            {
-                appScreenAnimator.SetBool("Expand", appScreenOpen = !appScreenOpen);
-                Transform parent = appScreenAnimator.gameObject.transform.parent;
-                int currentIndex = appScreenAnimator.gameObject.transform.GetSiblingIndex();
-
-                if (currentIndex > 0)
-                {
-                    // Get the window directly below (next sibling)
-                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
-                    BringWindowToFront(nextWindow); // Bring the next window to the front
-                }
-            }
-            else
-            {
-                BringWindowToFront(screenOnTop);
-            }
-        }
-        SoundManager.Instance.PlaySFX(appScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
-    }
-
-    public void ToggleChatScreen()
-    {
-        screenOnTop = chatScreenAnimator.gameObject;
-        if (!chatScreenOpen)
-        {
-            chatScreenAnimator.SetBool("Expand", chatScreenOpen = !chatScreenOpen);
-            BringWindowToFront(screenOnTop);
-        }
-        else
-        {
-            if (IsOnTop())
-            {
-                chatScreenAnimator.SetBool("Expand", chatScreenOpen = !chatScreenOpen);
-                Transform parent = chatScreenAnimator.gameObject.transform.parent;
-                int currentIndex = chatScreenAnimator.gameObject.transform.GetSiblingIndex();
-
-                if (currentIndex > 0)
-                {
-                    // Get the window directly below (next sibling)
-                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
-                    BringWindowToFront(nextWindow); // Bring the next window to the front
-                }
-            }
-            else
-            {
-                BringWindowToFront(screenOnTop);
-            }
-        }
-        SoundManager.Instance.PlaySFX(chatScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
-    }
-
-    public void ToggleMapScreen()
-    {
-
-         screenOnTop = mapScreenAnimator.gameObject;
-        if(!mapScreenOpen)
-        {
-            mapScreenAnimator.SetBool("Expand", mapScreenOpen = !mapScreenOpen);
-            BringWindowToFront(screenOnTop);
-        }
-        else
-        {
-            if (IsOnTop())
-            {
-                mapScreenAnimator.SetBool("Expand", mapScreenOpen = !mapScreenOpen);
-                Transform parent = mapScreenAnimator.gameObject.transform.parent;
-                int currentIndex = mapScreenAnimator.gameObject.transform.GetSiblingIndex();
-
-                if (currentIndex > 0)
-                {
-                    // Get the window directly below (next sibling)
-                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
-                    BringWindowToFront(nextWindow); // Bring the next window to the front
-                }
-            }
-            else
-            {
-                BringWindowToFront(screenOnTop);
-            }
-        }
-        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
-    }
-
-
-    public void ToggleLegendaryStudentPanel() //unconventional naming & referencsing scheme
-    {
-        screenOnTop = legendaryStudentPanel;
-        if (!legendaryStudentPanelOpen)
-        {
-            legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
-            BringWindowToFront(screenOnTop);
-        }
-        else
-        {
-            if (IsOnTop())
-            {
-                legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
-                Transform parent = legendaryStudentPanel.transform.parent;
-                int currentIndex = legendaryStudentPanel.transform.GetSiblingIndex();
-
-                if (currentIndex > 0)
-                {
-                    // Get the window directly below (next sibling)
-                    GameObject nextWindow = parent.GetChild(currentIndex - 1).gameObject;
-                    BringWindowToFront(nextWindow); // Bring the next window to the front
-                }
-            }
-            else
-            {
-                BringWindowToFront(screenOnTop);
-            }
-        }
-        SoundManager.Instance.PlaySFX(legendaryStudentPanelOpen ? "Click_ChatOpen" : "Click_ChatClose");
-    }
 
     public void ToggleCreditScreen()
     {
@@ -302,16 +183,69 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlaySFX(creditScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
-    public void BringWindowToFront(GameObject window)
+    public void OnWindowButtonClicked(int windowIndex)
     {
-        // Move the window to the last child in the parent (top of the hierarchy)
-        window.transform.SetAsLastSibling();
+        // If the clicked window is already open, do nothing
+        if (currentOpenWindow == windowIndex) 
+        {
+            windowAnimators[windowIndex].SetBool("Expand", false);
+            SoundManager.Instance.PlaySFX("Click_ChatClose");
+            currentOpenWindow = windowAnimators.Count + 1;
+            return;
+        }
+
+        // Start the process of collapsing other windows and opening the new one
+        StartCoroutine(CollapseOthersAndOpen(windowIndex));
     }
 
-    private bool IsOnTop()
+    // Coroutine to collapse all other windows and open the clicked window
+    private IEnumerator CollapseOthersAndOpen(int windowIndex)
     {
-        return screenOnTop.transform.GetSiblingIndex() == screenOnTop.transform.parent.childCount - 1;
+        // Collapse all windows that are open (except the clicked one)
+        for (int i = 0; i < windowAnimators.Count; i++)
+        {
+            if (i != windowIndex && windowAnimators[i].GetBool("Expand"))
+            {
+                windowAnimators[i].SetBool("Expand", false);
+                if (windowToggleWait != 0)
+                {
+                    SoundManager.Instance.PlaySFX("Click_ChatClose");
+                }
+                yield return new WaitForSeconds(windowToggleWait);
+            }
+        }
+
+        // Open the clicked window and bring it to the front
+        OpenWindow(windowIndex);
     }
 
+    // Method to open the selected window and bring it to the front
+    private void OpenWindow(int windowIndex)
+    {
+        // Open the window
+        windowAnimators[windowIndex].SetBool("Expand", true);
+        SoundManager.Instance.PlaySFX("Click_ChatOpen");
+        UpdateSortingLayer(windowIndex);
+
+        // Update the current open window tracker
+        currentOpenWindow = windowIndex;
+    }
+
+    private void UpdateSortingLayer(int windowIndex)
+    {
+        for (int i = 0; i < windowCanvases.Count; i++)
+        {
+            // The currently selected window gets the highest sorting order
+            if (i == windowIndex)
+            {
+                windowCanvases[i].sortingOrder = sortingLayerBase + windowCanvases.Count;
+            }
+            else
+            {
+                // Other windows get lower sorting orders in the stack
+                windowCanvases[i].sortingOrder = sortingLayerBase + i;
+            }
+        }
+    }
     #endregion
 }
